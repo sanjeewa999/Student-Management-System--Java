@@ -45,7 +45,7 @@ public class mainLogin extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(204, 0, 51));
 
         login.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        login.setForeground(new java.awt.Color(255, 255, 0));
+        login.setForeground(new java.awt.Color(255, 255, 204));
         login.setText("LOGIN");
 
         adminlogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/techmis/admin.png"))); // NOI18N

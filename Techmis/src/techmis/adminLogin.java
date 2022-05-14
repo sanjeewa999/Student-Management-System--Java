@@ -45,6 +45,7 @@ public class adminLogin extends javax.swing.JFrame {
         adminlogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/techmis/admin.png"))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Rockwell", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 204));
         jLabel1.setText("Admin Login");
 
         backbtn.setBackground(new java.awt.Color(0, 102, 102));
