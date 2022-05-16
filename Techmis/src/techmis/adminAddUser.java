@@ -149,6 +149,11 @@ public class adminAddUser extends javax.swing.JFrame {
         create_btn.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         create_btn.setForeground(new java.awt.Color(102, 0, 102));
         create_btn.setText("Create");
+        create_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                create_btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -306,6 +311,17 @@ public class adminAddUser extends javax.swing.JFrame {
         adminDashboard object = new adminDashboard();
         object.setVisible(true);
     }//GEN-LAST:event_btn_backActionPerformed
+
+    private void create_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_create_btnActionPerformed
+        User obj=new User();
+        
+        String type=(String) this.type.getSelectedItem();
+        String fname=Fname.getText();
+        String lname=Lname.getText();
+        
+        
+        obj.insert();
+    }//GEN-LAST:event_create_btnActionPerformed
 
     /**
      * @param args the command line arguments
