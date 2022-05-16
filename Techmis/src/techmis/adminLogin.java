@@ -29,13 +29,13 @@ public class adminLogin extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         adminlogo = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        backbtn = new javax.swing.JButton();
+        btn_back = new javax.swing.JButton();
         usernamelbl = new javax.swing.JLabel();
         passwordlbl = new javax.swing.JLabel();
-        usernametext = new javax.swing.JTextField();
-        passwordfield = new javax.swing.JPasswordField();
-        clearbtn = new javax.swing.JButton();
-        loginbtn = new javax.swing.JButton();
+        username = new javax.swing.JTextField();
+        password = new javax.swing.JPasswordField();
+        btn_clear = new javax.swing.JButton();
+        btn_login = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -48,12 +48,12 @@ public class adminLogin extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 204));
         jLabel1.setText("Admin Login");
 
-        backbtn.setBackground(new java.awt.Color(0, 102, 102));
-        backbtn.setForeground(new java.awt.Color(204, 255, 255));
-        backbtn.setText("<-- Back ");
-        backbtn.addActionListener(new java.awt.event.ActionListener() {
+        btn_back.setBackground(new java.awt.Color(0, 102, 102));
+        btn_back.setForeground(new java.awt.Color(204, 255, 255));
+        btn_back.setText("<-- Back ");
+        btn_back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backbtnActionPerformed(evt);
+                btn_backActionPerformed(evt);
             }
         });
 
@@ -66,15 +66,20 @@ public class adminLogin extends javax.swing.JFrame {
         passwordlbl.setForeground(new java.awt.Color(255, 255, 255));
         passwordlbl.setText("Password :");
 
-        clearbtn.setBackground(new java.awt.Color(51, 0, 51));
-        clearbtn.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        clearbtn.setForeground(new java.awt.Color(255, 204, 255));
-        clearbtn.setText("Clear");
+        btn_clear.setBackground(new java.awt.Color(51, 0, 51));
+        btn_clear.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btn_clear.setForeground(new java.awt.Color(255, 204, 255));
+        btn_clear.setText("Clear");
 
-        loginbtn.setBackground(new java.awt.Color(51, 0, 51));
-        loginbtn.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        loginbtn.setForeground(new java.awt.Color(255, 204, 255));
-        loginbtn.setText("Login");
+        btn_login.setBackground(new java.awt.Color(51, 0, 51));
+        btn_login.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btn_login.setForeground(new java.awt.Color(255, 204, 255));
+        btn_login.setText("Login");
+        btn_login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_loginActionPerformed(evt);
+            }
+        });
 
         jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setText("Faculty of Technology - University of Ruhuna");
@@ -93,7 +98,7 @@ public class adminLogin extends javax.swing.JFrame {
                         .addContainerGap(54, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(backbtn)
+                        .addComponent(btn_back)
                         .addGap(23, 23, 23))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
@@ -102,14 +107,14 @@ public class adminLogin extends javax.swing.JFrame {
                     .addComponent(usernamelbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(usernametext)
-                    .addComponent(passwordfield, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE))
+                    .addComponent(username)
+                    .addComponent(password, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(clearbtn)
+                .addComponent(btn_clear)
                 .addGap(66, 66, 66)
-                .addComponent(loginbtn)
+                .addComponent(btn_login)
                 .addGap(97, 97, 97))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(81, 81, 81)
@@ -125,21 +130,21 @@ public class adminLogin extends javax.swing.JFrame {
                         .addComponent(adminlogo, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
-                        .addComponent(backbtn)
+                        .addComponent(btn_back)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel1)))
                 .addGap(45, 45, 45)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(usernamelbl)
-                    .addComponent(usernametext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(passwordlbl)
-                    .addComponent(passwordfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(clearbtn)
-                    .addComponent(loginbtn))
+                    .addComponent(btn_clear)
+                    .addComponent(btn_login))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addContainerGap())
@@ -159,11 +164,15 @@ public class adminLogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbtnActionPerformed
+    private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
         setVisible(false);
         mainLogin object = new mainLogin();
         object.setVisible(true);
-    }//GEN-LAST:event_backbtnActionPerformed
+    }//GEN-LAST:event_btn_backActionPerformed
+
+    private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
+       
+    }//GEN-LAST:event_btn_loginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -202,15 +211,15 @@ public class adminLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel adminlogo;
-    private javax.swing.JButton backbtn;
-    private javax.swing.JButton clearbtn;
+    private javax.swing.JButton btn_back;
+    private javax.swing.JButton btn_clear;
+    private javax.swing.JButton btn_login;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton loginbtn;
-    private javax.swing.JPasswordField passwordfield;
+    private javax.swing.JPasswordField password;
     private javax.swing.JLabel passwordlbl;
+    private javax.swing.JTextField username;
     private javax.swing.JLabel usernamelbl;
-    private javax.swing.JTextField usernametext;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -52,7 +52,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="idLabel" min="-2" pref="37" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jTextField1" min="-2" pref="174" max="-2" attributes="0"/>
+                                  <Component id="id" min="-2" pref="174" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
@@ -93,7 +93,7 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="idLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="id" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="searchbtn" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="resetbtn" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -173,7 +173,7 @@
             <Property name="text" type="java.lang.String" value="ID : "/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="id">
         </Component>
         <Component class="javax.swing.JButton" name="searchbtn">
           <Properties>

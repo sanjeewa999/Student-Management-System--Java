@@ -31,12 +31,12 @@ public class adminDashboard extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        backbtn = new javax.swing.JButton();
-        viewuserbtn = new javax.swing.JButton();
-        coursebtn = new javax.swing.JButton();
-        noticebtn = new javax.swing.JButton();
-        timetablebtn = new javax.swing.JButton();
-        adduserbtn = new javax.swing.JButton();
+        btn_back = new javax.swing.JButton();
+        btn_viewuser = new javax.swing.JButton();
+        btn_course = new javax.swing.JButton();
+        btn_notice = new javax.swing.JButton();
+        btn_timetable = new javax.swing.JButton();
+        btn_adduser = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         jButton1.setText("jButton1");
@@ -54,39 +54,39 @@ public class adminDashboard extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 204));
         jLabel2.setText("Administrator Dashboard");
 
-        backbtn.setBackground(new java.awt.Color(0, 102, 102));
-        backbtn.setForeground(new java.awt.Color(204, 255, 255));
-        backbtn.setText("<-- Back ");
-        backbtn.addActionListener(new java.awt.event.ActionListener() {
+        btn_back.setBackground(new java.awt.Color(0, 102, 102));
+        btn_back.setForeground(new java.awt.Color(204, 255, 255));
+        btn_back.setText("<-- Back ");
+        btn_back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backbtnActionPerformed(evt);
+                btn_backActionPerformed(evt);
             }
         });
 
-        viewuserbtn.setBackground(new java.awt.Color(204, 0, 51));
-        viewuserbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        viewuserbtn.setForeground(new java.awt.Color(255, 255, 0));
-        viewuserbtn.setText("View User");
+        btn_viewuser.setBackground(new java.awt.Color(204, 0, 51));
+        btn_viewuser.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btn_viewuser.setForeground(new java.awt.Color(255, 255, 0));
+        btn_viewuser.setText("View User");
 
-        coursebtn.setBackground(new java.awt.Color(204, 0, 51));
-        coursebtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        coursebtn.setForeground(new java.awt.Color(255, 255, 0));
-        coursebtn.setText("Course details");
+        btn_course.setBackground(new java.awt.Color(204, 0, 51));
+        btn_course.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btn_course.setForeground(new java.awt.Color(255, 255, 0));
+        btn_course.setText("Course details");
 
-        noticebtn.setBackground(new java.awt.Color(204, 0, 51));
-        noticebtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        noticebtn.setForeground(new java.awt.Color(255, 255, 0));
-        noticebtn.setText("Notice details");
+        btn_notice.setBackground(new java.awt.Color(204, 0, 51));
+        btn_notice.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btn_notice.setForeground(new java.awt.Color(255, 255, 0));
+        btn_notice.setText("Notice details");
 
-        timetablebtn.setBackground(new java.awt.Color(204, 0, 51));
-        timetablebtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        timetablebtn.setForeground(new java.awt.Color(255, 255, 0));
-        timetablebtn.setText("Time table");
+        btn_timetable.setBackground(new java.awt.Color(204, 0, 51));
+        btn_timetable.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btn_timetable.setForeground(new java.awt.Color(255, 255, 0));
+        btn_timetable.setText("Time table");
 
-        adduserbtn.setBackground(new java.awt.Color(204, 0, 51));
-        adduserbtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        adduserbtn.setForeground(new java.awt.Color(255, 255, 0));
-        adduserbtn.setText("Add User");
+        btn_adduser.setBackground(new java.awt.Color(204, 0, 51));
+        btn_adduser.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btn_adduser.setForeground(new java.awt.Color(255, 255, 0));
+        btn_adduser.setText("Add User");
 
         jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setText("Faculty of Technology - University of Ruhuna");
@@ -105,17 +105,17 @@ public class adminDashboard extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(backbtn)
+                        .addComponent(btn_back)
                         .addGap(152, 152, 152)
                         .addComponent(jLabel3))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(139, 139, 139)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(adduserbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(viewuserbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(coursebtn, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
-                            .addComponent(noticebtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(timetablebtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(btn_adduser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_viewuser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_course, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
+                            .addComponent(btn_notice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_timetable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -131,20 +131,20 @@ public class adminDashboard extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(34, 34, 34)
-                        .addComponent(adduserbtn)
+                        .addComponent(btn_adduser)
                         .addGap(18, 18, 18)
-                        .addComponent(viewuserbtn)
+                        .addComponent(btn_viewuser)
                         .addGap(18, 18, 18)
-                        .addComponent(coursebtn)
+                        .addComponent(btn_course)
                         .addGap(18, 18, 18)
-                        .addComponent(noticebtn)
+                        .addComponent(btn_notice)
                         .addGap(18, 18, 18)
-                        .addComponent(timetablebtn)
+                        .addComponent(btn_timetable)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                         .addComponent(jLabel3))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(backbtn)))
+                        .addComponent(btn_back)))
                 .addContainerGap())
         );
 
@@ -162,11 +162,11 @@ public class adminDashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbtnActionPerformed
+    private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
         setVisible(false);
         adminLogin object = new adminLogin();
         object.setVisible(true);
-    }//GEN-LAST:event_backbtnActionPerformed
+    }//GEN-LAST:event_btn_backActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,17 +204,17 @@ public class adminDashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton adduserbtn;
-    private javax.swing.JButton backbtn;
-    private javax.swing.JButton coursebtn;
+    private javax.swing.JButton btn_adduser;
+    private javax.swing.JButton btn_back;
+    private javax.swing.JButton btn_course;
+    private javax.swing.JButton btn_notice;
+    private javax.swing.JButton btn_timetable;
+    private javax.swing.JButton btn_viewuser;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JButton noticebtn;
-    private javax.swing.JButton timetablebtn;
-    private javax.swing.JButton viewuserbtn;
     // End of variables declaration//GEN-END:variables
 }

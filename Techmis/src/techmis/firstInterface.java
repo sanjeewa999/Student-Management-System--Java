@@ -36,7 +36,7 @@ public class firstInterface extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         faculty = new javax.swing.JLabel();
-        enterbtn = new javax.swing.JButton();
+        btn_enter = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,6 +46,8 @@ public class firstInterface extends javax.swing.JFrame {
         faclogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/techmis/fac_logo.png"))); // NOI18N
 
         unilogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/techmis/uni_logo.jpg"))); // NOI18N
+        unilogo.setMaximumSize(new java.awt.Dimension(300, 300));
+        unilogo.setPreferredSize(new java.awt.Dimension(300, 300));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 0));
@@ -57,13 +59,13 @@ public class firstInterface extends javax.swing.JFrame {
 
         faculty.setIcon(new javax.swing.ImageIcon(getClass().getResource("/techmis/faculty.jpg"))); // NOI18N
 
-        enterbtn.setBackground(new java.awt.Color(51, 0, 0));
-        enterbtn.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
-        enterbtn.setForeground(new java.awt.Color(51, 204, 0));
-        enterbtn.setText("ENTER");
-        enterbtn.addActionListener(new java.awt.event.ActionListener() {
+        btn_enter.setBackground(new java.awt.Color(51, 0, 0));
+        btn_enter.setFont(new java.awt.Font("Century", 1, 18)); // NOI18N
+        btn_enter.setForeground(new java.awt.Color(51, 204, 0));
+        btn_enter.setText("ENTER");
+        btn_enter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enterbtnActionPerformed(evt);
+                btn_enterActionPerformed(evt);
             }
         });
 
@@ -82,7 +84,7 @@ public class firstInterface extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(enterbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_enter, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(264, 264, 264))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(unilogo, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -113,7 +115,7 @@ public class firstInterface extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addComponent(faculty, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(enterbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_enter, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addContainerGap())
@@ -133,11 +135,11 @@ public class firstInterface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void enterbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterbtnActionPerformed
+    private void btn_enterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_enterActionPerformed
         setVisible(false);
         mainLogin object = new mainLogin();
         object.setVisible(true);
-    }//GEN-LAST:event_enterbtnActionPerformed
+    }//GEN-LAST:event_btn_enterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,7 +177,7 @@ public class firstInterface extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton enterbtn;
+    private javax.swing.JButton btn_enter;
     private javax.swing.JLabel faclogo;
     private javax.swing.JLabel faculty;
     private javax.swing.JLabel jLabel1;

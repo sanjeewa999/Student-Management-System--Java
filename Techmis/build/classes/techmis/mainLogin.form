@@ -72,19 +72,19 @@
                   <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="253" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="backbtn" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_back" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="adminbtn" min="-2" pref="155" max="-2" attributes="0"/>
-                      <Component id="lecbtn" min="-2" pref="155" max="-2" attributes="0"/>
+                      <Component id="btn_admin" min="-2" pref="155" max="-2" attributes="0"/>
+                      <Component id="btn_lec" min="-2" pref="155" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="stbtn" min="-2" pref="155" max="-2" attributes="0"/>
-                      <Component id="tobtn" min="-2" pref="155" max="-2" attributes="0"/>
+                      <Component id="btn_st" min="-2" pref="155" max="-2" attributes="0"/>
+                      <Component id="btn_to" min="-2" pref="155" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
               </Group>
@@ -97,7 +97,7 @@
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="backbtn" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_back" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="login" min="-2" pref="61" max="-2" attributes="0"/>
@@ -107,8 +107,8 @@
                           </Group>
                           <EmptySpace pref="17" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="adminbtn" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="tobtn" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_admin" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_to" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -117,8 +117,8 @@
                           </Group>
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="stbtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lecbtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_st" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_lec" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
@@ -169,7 +169,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="tobtn">
+        <Component class="javax.swing.JButton" name="btn_to">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="0" red="ff" type="rgb"/>
@@ -183,10 +183,10 @@
             <Property name="text" type="java.lang.String" value="Technical officer"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tobtnActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_toActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="lecbtn">
+        <Component class="javax.swing.JButton" name="btn_lec">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="0" red="ff" type="rgb"/>
@@ -200,7 +200,7 @@
             <Property name="text" type="java.lang.String" value="Lecturer"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="stbtn">
+        <Component class="javax.swing.JButton" name="btn_st">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="0" red="ff" type="rgb"/>
@@ -214,7 +214,7 @@
             <Property name="text" type="java.lang.String" value="Student"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="adminbtn">
+        <Component class="javax.swing.JButton" name="btn_admin">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="0" red="ff" type="rgb"/>
@@ -228,7 +228,7 @@
             <Property name="text" type="java.lang.String" value="Admin"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="adminbtnActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_adminActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
@@ -239,7 +239,7 @@
             <Property name="text" type="java.lang.String" value="Faculty of Technology - University of Ruhuna"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="backbtn">
+        <Component class="javax.swing.JButton" name="btn_back">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="0" type="rgb"/>
@@ -250,7 +250,7 @@
             <Property name="text" type="java.lang.String" value="&lt;-- Back "/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backbtnActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_backActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

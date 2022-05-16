@@ -66,18 +66,18 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                          <Component id="backbtn" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_back" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="adduserbtn" alignment="0" max="32767" attributes="0"/>
-                              <Component id="viewuserbtn" alignment="0" max="32767" attributes="0"/>
-                              <Component id="coursebtn" alignment="0" pref="473" max="32767" attributes="0"/>
-                              <Component id="noticebtn" alignment="0" max="32767" attributes="0"/>
-                              <Component id="timetablebtn" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btn_adduser" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btn_viewuser" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btn_course" alignment="0" pref="473" max="32767" attributes="0"/>
+                              <Component id="btn_notice" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btn_timetable" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -101,21 +101,21 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                          <Component id="adduserbtn" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_adduser" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="viewuserbtn" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_viewuser" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="coursebtn" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_course" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="noticebtn" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_notice" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="timetablebtn" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_timetable" min="-2" max="-2" attributes="0"/>
                           <EmptySpace pref="62" max="32767" attributes="0"/>
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="backbtn" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_back" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -143,7 +143,7 @@
             <Property name="text" type="java.lang.String" value="Administrator Dashboard"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="backbtn">
+        <Component class="javax.swing.JButton" name="btn_back">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="0" type="rgb"/>
@@ -154,10 +154,10 @@
             <Property name="text" type="java.lang.String" value="&lt;-- Back "/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backbtnActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_backActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="viewuserbtn">
+        <Component class="javax.swing.JButton" name="btn_viewuser">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="0" red="cc" type="rgb"/>
@@ -171,7 +171,7 @@
             <Property name="text" type="java.lang.String" value="View User"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="coursebtn">
+        <Component class="javax.swing.JButton" name="btn_course">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="0" red="cc" type="rgb"/>
@@ -185,7 +185,7 @@
             <Property name="text" type="java.lang.String" value="Course details"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="noticebtn">
+        <Component class="javax.swing.JButton" name="btn_notice">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="0" red="cc" type="rgb"/>
@@ -199,7 +199,7 @@
             <Property name="text" type="java.lang.String" value="Notice details"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="timetablebtn">
+        <Component class="javax.swing.JButton" name="btn_timetable">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="0" red="cc" type="rgb"/>
@@ -213,7 +213,7 @@
             <Property name="text" type="java.lang.String" value="Time table"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="adduserbtn">
+        <Component class="javax.swing.JButton" name="btn_adduser">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="0" red="cc" type="rgb"/>

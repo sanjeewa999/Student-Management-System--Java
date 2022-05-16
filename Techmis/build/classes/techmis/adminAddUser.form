@@ -62,20 +62,20 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="dobText" alignment="0" pref="214" max="32767" attributes="0"/>
-                                      <Component id="fnameText" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="lnameText" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="dob" alignment="0" pref="214" max="32767" attributes="0"/>
+                                      <Component id="Lname" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="Fname" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                       <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="typeComboBox" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="genderComboBox" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="nicText" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="contactText" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="emailText" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="type" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="gender" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="nic" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="contact" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="email" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
@@ -86,8 +86,8 @@
                                           </Group>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="idText" pref="180" max="32767" attributes="0"/>
-                                              <Component id="passwordText" max="32767" attributes="0"/>
+                                              <Component id="id" pref="180" max="32767" attributes="0"/>
+                                              <Component id="password" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="32767" attributes="0"/>
                                       </Group>
@@ -99,9 +99,9 @@
                                                   <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="1" attributes="0">
-                                                  <Component id="jButton1" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <Component id="btn_clear" min="-2" pref="100" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                                                  <Component id="jButton2" min="-2" pref="100" max="-2" attributes="0"/>
+                                                  <Component id="create_btn" min="-2" pref="100" max="-2" attributes="0"/>
                                                   <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
@@ -117,7 +117,7 @@
                                   <Component id="jLabel1" min="-2" pref="113" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="backbtn" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btn_back" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
                                   <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -142,34 +142,34 @@
                           <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="typeComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="type" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="lnameText" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Fname" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="fnameText" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="Lname" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="dobText" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="dob" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="genderComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="gender" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="nicText" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="nic" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
@@ -180,34 +180,34 @@
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="contactText" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="contact" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="create_btn" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_clear" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="emailText" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="email" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="28" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="idLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="idText" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="id" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="passwordLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="passwordText" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="password" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="backbtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btn_back" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -328,38 +328,36 @@
             <Property name="text" type="java.lang.String" value="Email :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="typeComboBox">
+        <Component class="javax.swing.JComboBox" name="type">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+                <StringItem index="0" value="Admin"/>
+                <StringItem index="1" value="Lecturer"/>
+                <StringItem index="2" value="Tech officer"/>
+                <StringItem index="3" value="Student"/>
               </StringArray>
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="typeComboBoxActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="typeActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="fnameText">
+        <Component class="javax.swing.JTextField" name="Lname">
         </Component>
-        <Component class="javax.swing.JTextField" name="lnameText">
+        <Component class="javax.swing.JTextField" name="Fname">
         </Component>
-        <Component class="javax.swing.JTextField" name="dobText">
+        <Component class="javax.swing.JTextField" name="dob">
         </Component>
-        <Component class="javax.swing.JComboBox" name="genderComboBox">
+        <Component class="javax.swing.JComboBox" name="gender">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="2">
+                <StringItem index="0" value="Male"/>
+                <StringItem index="1" value="Female"/>
               </StringArray>
             </Property>
           </Properties>
@@ -367,7 +365,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="nicText">
+        <Component class="javax.swing.JTextField" name="nic">
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
           <AuxValues>
@@ -376,7 +374,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextArea" name="jTextArea1">
+            <Component class="javax.swing.JTextArea" name="address">
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
@@ -384,9 +382,9 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JTextField" name="contactText">
+        <Component class="javax.swing.JTextField" name="contact">
         </Component>
-        <Component class="javax.swing.JTextField" name="emailText">
+        <Component class="javax.swing.JTextField" name="email">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel11">
           <Properties>
@@ -410,7 +408,7 @@
             <Property name="text" type="java.lang.String" value="Add image"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="backbtn">
+        <Component class="javax.swing.JButton" name="btn_back">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="66" red="0" type="rgb"/>
@@ -421,7 +419,7 @@
             <Property name="text" type="java.lang.String" value="&lt;-- Back "/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="backbtnActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_backActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="idLabel">
@@ -446,11 +444,11 @@
             <Property name="text" type="java.lang.String" value="Password :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="idText">
+        <Component class="javax.swing.JTextField" name="id">
         </Component>
-        <Component class="javax.swing.JPasswordField" name="passwordText">
+        <Component class="javax.swing.JPasswordField" name="password">
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="btn_clear">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="cc" red="ff" type="rgb"/>
@@ -464,7 +462,7 @@
             <Property name="text" type="java.lang.String" value="Clear"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="create_btn">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="cc" red="ff" type="rgb"/>
