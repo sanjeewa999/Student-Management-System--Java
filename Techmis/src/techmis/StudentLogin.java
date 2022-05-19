@@ -36,8 +36,8 @@ public class StudentLogin extends javax.swing.JFrame {
         passwordlbl = new javax.swing.JLabel();
         uname = new javax.swing.JTextField();
         password = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btn_clear = new javax.swing.JButton();
+        btn_create = new javax.swing.JButton();
 
         jPasswordField1.setText("jPasswordField1");
 
@@ -72,15 +72,15 @@ public class StudentLogin extends javax.swing.JFrame {
         passwordlbl.setForeground(new java.awt.Color(255, 255, 255));
         passwordlbl.setText("Password :");
 
-        jButton1.setBackground(new java.awt.Color(51, 0, 51));
-        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 153, 153));
-        jButton1.setText("Clear");
+        btn_clear.setBackground(new java.awt.Color(51, 0, 51));
+        btn_clear.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btn_clear.setForeground(new java.awt.Color(255, 153, 153));
+        btn_clear.setText("Clear");
 
-        jButton2.setBackground(new java.awt.Color(51, 0, 51));
-        jButton2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 153, 153));
-        jButton2.setText("Create");
+        btn_create.setBackground(new java.awt.Color(51, 0, 51));
+        btn_create.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        btn_create.setForeground(new java.awt.Color(255, 153, 153));
+        btn_create.setText("Create");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -103,17 +103,21 @@ public class StudentLogin extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addGap(108, 108, 108)
-                                .addComponent(jButton2))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(usernamelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(uname))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(passwordlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(btn_clear)
+                                    .addComponent(passwordlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btn_create)
+                                        .addGap(29, 29, 29)))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap(56, Short.MAX_VALUE))
         );
@@ -139,8 +143,8 @@ public class StudentLogin extends javax.swing.JFrame {
                     .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(42, 42, 42)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btn_clear)
+                    .addComponent(btn_create))
                 .addGap(41, 41, 41)
                 .addComponent(jLabel3)
                 .addGap(15, 15, 15))
@@ -203,8 +207,8 @@ public class StudentLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_back;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btn_clear;
+    private javax.swing.JButton btn_create;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

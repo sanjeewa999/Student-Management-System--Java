@@ -34,7 +34,7 @@ public class mainLogin extends javax.swing.JFrame {
         stlogo = new javax.swing.JLabel();
         btn_to = new javax.swing.JButton();
         btn_lec = new javax.swing.JButton();
-        btn_st = new javax.swing.JButton();
+        btn_stu = new javax.swing.JButton();
         btn_admin = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btn_back = new javax.swing.JButton();
@@ -71,10 +71,15 @@ public class mainLogin extends javax.swing.JFrame {
         btn_lec.setForeground(new java.awt.Color(255, 255, 0));
         btn_lec.setText("Lecturer");
 
-        btn_st.setBackground(new java.awt.Color(255, 0, 51));
-        btn_st.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btn_st.setForeground(new java.awt.Color(255, 255, 0));
-        btn_st.setText("Student");
+        btn_stu.setBackground(new java.awt.Color(255, 0, 51));
+        btn_stu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_stu.setForeground(new java.awt.Color(255, 255, 0));
+        btn_stu.setText("Student");
+        btn_stu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_stuActionPerformed(evt);
+            }
+        });
 
         btn_admin.setBackground(new java.awt.Color(255, 0, 51));
         btn_admin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -125,7 +130,7 @@ public class mainLogin extends javax.swing.JFrame {
                     .addComponent(btn_lec, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_st, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_stu, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_to, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(129, 129, 129))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -161,7 +166,7 @@ public class mainLogin extends javax.swing.JFrame {
                             .addComponent(leclogo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn_st)
+                            .addComponent(btn_stu)
                             .addComponent(btn_lec))
                         .addGap(45, 45, 45)
                         .addComponent(jLabel1)))
@@ -197,6 +202,12 @@ public class mainLogin extends javax.swing.JFrame {
         firstInterface object = new firstInterface();
         object.setVisible(true);
     }//GEN-LAST:event_btn_backActionPerformed
+
+    private void btn_stuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_stuActionPerformed
+        setVisible(false);
+        StudentLogin object = new StudentLogin();
+        object.setVisible(true);
+    }//GEN-LAST:event_btn_stuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -238,7 +249,7 @@ public class mainLogin extends javax.swing.JFrame {
     private javax.swing.JButton btn_admin;
     private javax.swing.JButton btn_back;
     private javax.swing.JButton btn_lec;
-    private javax.swing.JButton btn_st;
+    private javax.swing.JButton btn_stu;
     private javax.swing.JButton btn_to;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

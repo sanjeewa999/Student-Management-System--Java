@@ -4,38 +4,48 @@
  */
 package techmis;
 
-import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
+import java.sql.Connection;
+import java.sql.DriverManager;
+import javax.swing.JOptionPane;
 /**
  *
  * @author ASUS
  */
-public class DBConnection {
+public class DBConnection { //start class
     
-    public static void main(String[] args){
-        
-        try {
-            
-            String url = "jdbc:mysql://localhost:3306/mis";
-            String user = "root";
-            String pw = "";
-            
-            Connection myConnection = DriverManager.getConnection(url, user, pw);
-            
-            if(myConnection != null)
-                System.out.println("Connected");
-            
-            //Statement stmt = myConnection.createStatement();
-            
-            
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+    Connection conn;
+    
+    //Setter and Getter
+
+    public Connection getConn() {
+        return conn;
     }
-}
+
+    public void setConn(Connection conn) {
+        this.conn = conn;
+    }
+    
+    //Variables
+    private static final String _CONURL_= "jdbc:mysql://localhost/mis";
+    private static final String _DRIVER_ = "com.mysql.jdbc.Driver";
+    
+    //Create connection
+    public void connection(){//Starty
+        //sync connection
+        synchronized (_CONURL_){//start
+            try{
+                Class.forName(_DRIVER_); //driver
+                setConn(DriverManager.getConnection(_CONURL_,"root",""));
+                //JOptionPane.showMessageDialog(null, "Connected");
+                //System.out.println("Connected");
+            }catch(Exception e){
+             JOptionPane.showMessageDialog(null, e);
+            }
+        }//end
+    }
+    
+    public static void main(String[] args) {
+        //DBConnection db=new DBConnection();
+        //db.connection();
+    }
+} //end class
