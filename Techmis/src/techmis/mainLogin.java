@@ -194,7 +194,9 @@ public class mainLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_adminActionPerformed
 
     private void btn_toActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_toActionPerformed
-        // TODO add your handling code here:
+        setVisible(false);
+        tecologin object = new tecologin();
+        object.setVisible(true);
     }//GEN-LAST:event_btn_toActionPerformed
 
     private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
