@@ -261,7 +261,7 @@ public class adminDashboard extends javax.swing.JFrame {
 
     private void btn_adduserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_adduserActionPerformed
         setVisible(false);
-        adminAddUser object = new AdminAddUser();
+        adminAddUser object = new adminAddUser();
         object.setVisible(true);
     }//GEN-LAST:event_btn_adduserActionPerformed
 

@@ -16,4 +16,10 @@ public interface AdminNoticesInterface {
     
     public void delete();
     
+    public void loadlist();
+    
+    public void notices();
+    
+    public void search();
+    
 }

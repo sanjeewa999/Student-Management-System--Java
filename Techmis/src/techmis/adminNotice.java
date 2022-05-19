@@ -4,6 +4,10 @@
  */
 package techmis;
 
+import java.awt.Dimension;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author ASUS
@@ -15,6 +19,7 @@ public class adminNotice extends javax.swing.JFrame {
      */
     public adminNotice() {
         initComponents();
+        //initialize components same fuction as initComponents
     }
 
     /**
@@ -46,7 +51,7 @@ public class adminNotice extends javax.swing.JFrame {
         backbtn = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        Table_list = new javax.swing.JTable();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -119,7 +124,7 @@ public class adminNotice extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(204, 204, 204));
         jLabel11.setText("Faculty of Technology - University of Ruhuna");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        Table_list.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -130,7 +135,7 @@ public class adminNotice extends javax.swing.JFrame {
                 "Notice ID", "Date", "Title", "Notice"
             }
         ));
-        jScrollPane3.setViewportView(jTable2);
+        jScrollPane3.setViewportView(Table_list);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -276,6 +281,7 @@ public class adminNotice extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable Table_list;
     private javax.swing.JButton backbtn;
     private javax.swing.JButton btn_add;
     private javax.swing.JButton btn_delete;
@@ -288,7 +294,6 @@ public class adminNotice extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextArea notice;
     private javax.swing.JLabel noticeLabel3;
@@ -298,4 +303,75 @@ public class adminNotice extends javax.swing.JFrame {
     private javax.swing.JTextField noticetitle;
     private javax.swing.JLabel titleLabel2;
     // End of variables declaration//GEN-END:variables
-}
+
+
+//Initialize and declare components
+    private void init(){ //start
+        centerFrame();
+        tableHeader();
+    } //nend
+    
+    //Center frame in screen
+    private void centerFrame(){ //start
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        Rectangle rec = this.getBounds();
+        setLocation((dim.height - rec.height)/2, (dim.width - rec.width)/2);
+    }//end
+    
+    //Default Table Model
+    DefaultTableModel model = new DefaultTableModel(){
+        @Override
+        public boolean isCellEditable(int row, int column) {
+            return false; //cells are not editable
+        }       
+    };
+    
+    //Create table header function
+         private void tableHeader(){//start
+            Table_list = new JTable(model);
+            //Creating colum Header
+            String[] dataHeader = {"#","ID","DATE","TITLE","NOTICE"};
+            setTableHeader(dataHeader, model);
+            //Set row height
+            Table_list.setRowHeight(30);
+            //Hide noticeid in index 1
+            TableColumn hidden = Table_list.getColumnModel().getColumn(1);
+            //Hidden in proper order
+            hidden.setMinWidth(0);
+            hidden.setPreferreWidth(0);
+            hidden.setMaxWidth(0);
+            //Creating custom size of each cell
+            //index 1 is not included
+            String keySize[] = {"0:50","2.180","3:100","4:100","5:100","6:100"};
+            keySizeCell(keySize);
+            Table_list.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+            
+            jScrollPanel.setViewportView(Table_list);
+         }//end
+         
+         //setting table header
+         private void setTableHeader(String[] data, DefaultTableModel model){//start
+             for(String datel : data){
+                 model.addColumn(datel);
+             }
+         }//end
+         //Setting keySize in cell
+         private void keySizeCell(String[] lenght){//start
+             for(String lengthl : lenght){
+                 //separate the values with (:) character (val:value)
+                 String[] newString = lengthl.split(":");
+                 int col = Integer.parseInt(newString[0]); //index val
+                 int size = Integer.parseInt(newString[1]); //the value
+                 setColSize(Table_list,col,size);
+             }
+         }//end
+        //Setting the colSize 
+        private void setColSize(JTable table, int col, int size) { //Start
+         table.getColumnModel().getColumn(col).setPreferredWidth(size);
+         table.getColumnModel().getColumn(col).setMinWidth(size);
+         table.getColumnModel().getColumn(col).setMaxWidth(size);
+    }//end
+         
+         
+         
+}//end class

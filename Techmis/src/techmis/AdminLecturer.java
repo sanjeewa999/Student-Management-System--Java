@@ -10,7 +10,7 @@ import com.mysql.cj.jdbc.PreparedStatementWrapper;
  *
  * @author ASUS
  */
-public class AdminLecturer extends User{
+public class AdminLecturer extends User implements AdminLecturerInterface{
     
     private String ID;
     private String depId;
