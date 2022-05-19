@@ -4,6 +4,8 @@
  */
 package techmis;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ASUS
@@ -170,7 +172,30 @@ public class lecturerLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_backActionPerformed
 
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
-
+        String usr=username.getText();
+        String pass=password.getText();
+        
+        try{
+            String chk="Select * from user where user_id=?";
+            //PreparedStatement pst = conn.prepareStatement(chk);
+            pst=conn.prepareStatement(chk);
+            pst.setString(1,usr);
+            rs=pst.executeQuery();
+            
+            if(rs.next()){
+                String password=rs.getString("password");
+                    if(pass.equals(password)){
+                        dispose();
+                        adminDashboard object = new adminDashboard();
+                        object.setVisible(true);
+                        this.password.setText("");
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Invalid Password","Login Error",JOptionPane.ERROR_MESSAGE);
+                    }
+            }else{
+                JOptionPane.showMessageDialog(null, "Username not Found","Login Error",JOptionPane.ERROR_MESSAGE);
+            }
+        }
     }//GEN-LAST:event_btn_loginActionPerformed
 
     /**

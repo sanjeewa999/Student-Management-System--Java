@@ -260,6 +260,15 @@ public class adminDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_backActionPerformed
 
     private void btn_adduserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_adduserActionPerformed
+<<<<<<< HEAD
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_adduserActionPerformed
+
+    private void btn_viewuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_viewuserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_viewuserActionPerformed
+
+=======
         setVisible(false);
         adminAddUser object = new adminAddUser();
         object.setVisible(true);
@@ -313,6 +322,7 @@ public class adminDashboard extends javax.swing.JFrame {
         object.setVisible(true);
     }//GEN-LAST:event_btn_timetableActionPerformed
 
+>>>>>>> 6bd8336f2e4aa6daf7aca1f4f548f79fde7890db
     /**
      * @param args the command line arguments
      */

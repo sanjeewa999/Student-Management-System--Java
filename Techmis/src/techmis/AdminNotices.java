@@ -171,7 +171,7 @@ public class AdminNotices extends DBConnection implements AdminNoticesInterface{
                 Integer ID; = rs.getInt("ID");
                 String date; = rs.getString("date");
                 String title; = rs.getString("title");
-                String notice; = re.getString("notice");
+                String notice; = rs.getString("notice");
                 
               //set the values
               this.setId(ID);

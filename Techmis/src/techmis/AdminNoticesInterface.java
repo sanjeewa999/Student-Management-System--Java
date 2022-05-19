@@ -20,6 +20,12 @@ public interface AdminNoticesInterface {
     
     public void notices();
     
-    public void search();
+    public void search(); 
+    
+    /*public void save(Lecturer lecturer);
+    public void update(Lecturer lecturer);
+    public void delete(Lecturer lecturer);
+    public Lecturer get(String lect_id);
+    public List<Lecturer> list();*/
     
 }
