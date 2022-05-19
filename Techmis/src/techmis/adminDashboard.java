@@ -67,6 +67,11 @@ public class adminDashboard extends javax.swing.JFrame {
         btn_viewuser.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btn_viewuser.setForeground(new java.awt.Color(255, 255, 0));
         btn_viewuser.setText("View User");
+        btn_viewuser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_viewuserActionPerformed(evt);
+            }
+        });
 
         btn_course.setBackground(new java.awt.Color(204, 0, 51));
         btn_course.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -87,6 +92,11 @@ public class adminDashboard extends javax.swing.JFrame {
         btn_adduser.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btn_adduser.setForeground(new java.awt.Color(255, 255, 0));
         btn_adduser.setText("Add User");
+        btn_adduser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_adduserActionPerformed(evt);
+            }
+        });
 
         jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setText("Faculty of Technology - University of Ruhuna");
@@ -167,6 +177,14 @@ public class adminDashboard extends javax.swing.JFrame {
         adminLogin object = new adminLogin();
         object.setVisible(true);
     }//GEN-LAST:event_btn_backActionPerformed
+
+    private void btn_adduserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_adduserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_adduserActionPerformed
+
+    private void btn_viewuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_viewuserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_viewuserActionPerformed
 
     /**
      * @param args the command line arguments
