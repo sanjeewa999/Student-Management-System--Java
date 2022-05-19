@@ -70,6 +70,11 @@ public class mainLogin extends javax.swing.JFrame {
         btn_lec.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btn_lec.setForeground(new java.awt.Color(255, 255, 0));
         btn_lec.setText("Lecturer");
+        btn_lec.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_lecActionPerformed(evt);
+            }
+        });
 
         btn_stu.setBackground(new java.awt.Color(255, 0, 51));
         btn_stu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -208,6 +213,12 @@ public class mainLogin extends javax.swing.JFrame {
         StudentLogin object = new StudentLogin();
         object.setVisible(true);
     }//GEN-LAST:event_btn_stuActionPerformed
+
+    private void btn_lecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_lecActionPerformed
+        setVisible(false);
+        lecturerLogin object = new lecturerLogin();
+        object.setVisible(true);
+    }//GEN-LAST:event_btn_lecActionPerformed
 
     /**
      * @param args the command line arguments

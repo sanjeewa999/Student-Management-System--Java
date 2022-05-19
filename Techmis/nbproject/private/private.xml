@@ -2,6 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
+            <file>file:/D:/Lectures/Level%202%20Semester%201/Object%20Oriented%20Development/Java_Project/Techmis/src/techmis/AdminNotices.java</file>
+            <file>file:/D:/Lectures/Level%202%20Semester%201/Object%20Oriented%20Development/Java_Project/Techmis/src/techmis/adminNotice.java</file>
+            <file>file:/D:/Lectures/Level%202%20Semester%201/Object%20Oriented%20Development/Java_Project/Techmis/src/techmis/AdminNoticesInterface.java</file>
+            <file>file:/D:/Lectures/Level%202%20Semester%201/Object%20Oriented%20Development/Java_Project/Techmis/src/techmis/DBConnection.java</file>
+=======
 <<<<<<< Updated upstream
             <file>file:/D:/Java_Project/Techmis/src/techmis/tecoaddattendence.java</file>
             <file>file:/D:/Java_Project/Techmis/src/techmis/tecoaddmedical.java</file>
@@ -20,6 +26,7 @@
             <file>file:/D:/Java_Project/Techmis/src/techmis/DBConnection.java</file>
             <file>file:/D:/Java_Project/Techmis/src/techmis/mainLogin.java</file>
 >>>>>>> Stashed changes
+>>>>>>> 127aac30240959333355cbcb9a6755be4d7b88ca
         </group>
     </open-files>
 </project-private>

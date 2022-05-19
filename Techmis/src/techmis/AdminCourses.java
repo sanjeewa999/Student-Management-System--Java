@@ -8,7 +8,7 @@ package techmis;
  *
  * @author ASUS
  */
-public class AdminCourses {
+public class AdminCourses extends DBConnection implements AdminCoursesInterface{
     
     private String ID;
     private String depId;
@@ -45,6 +45,21 @@ public class AdminCourses {
 
     public void setCredit(Integer credit) {
         this.credit = credit;
+    }
+
+    @Override
+    public void insert() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void update() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void delete() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     

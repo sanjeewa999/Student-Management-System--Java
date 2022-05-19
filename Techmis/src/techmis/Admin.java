@@ -10,7 +10,7 @@ import com.mysql.cj.jdbc.PreparedStatementWrapper;
  *
  * @author ASUS
  */
-public class Admin extends User{
+public class Admin extends User implements AdminInterface{
     private String ID;
     private String name;
     private String address;
@@ -84,7 +84,7 @@ public class Admin extends User{
         this.role = role;
     }
 
-    @Override
+     @Override
     public void delete() {
         
     }
@@ -103,6 +103,5 @@ public class Admin extends User{
         } catch (Exception e) {
         }
     }
-    
     
 }
