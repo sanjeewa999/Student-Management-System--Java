@@ -3,9 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            <file>file:/D:/Lectures/Level%202%20Semester%201/Object%20Oriented%20Development/Java_Project/Techmis/src/techmis/AdminNotices.java</file>
+            <file>file:/D:/Lectures/Level%202%20Semester%201/Object%20Oriented%20Development/Java_Project/Techmis/src/techmis/adminNotice.java</file>
+            <file>file:/D:/Lectures/Level%202%20Semester%201/Object%20Oriented%20Development/Java_Project/Techmis/src/techmis/AdminNoticesInterface.java</file>
+            <file>file:/D:/Lectures/Level%202%20Semester%201/Object%20Oriented%20Development/Java_Project/Techmis/src/techmis/DBConnection.java</file>
+=======
+<<<<<<< Updated upstream
+>>>>>>> cc4d05b587acd7c5da80d7fb3f257fb90d712cd0
             <file>file:/D:/Java_Project/Techmis/src/techmis/tecoaddattendence.java</file>
             <file>file:/D:/Java_Project/Techmis/src/techmis/adminLogin.java</file>
             <file>file:/D:/Java_Project/Techmis/src/techmis/mainLogin.java</file>
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> 127aac30240959333355cbcb9a6755be4d7b88ca
+>>>>>>> cc4d05b587acd7c5da80d7fb3f257fb90d712cd0
         </group>
     </open-files>
 </project-private>

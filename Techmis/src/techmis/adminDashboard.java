@@ -270,7 +270,7 @@ public class adminDashboard extends javax.swing.JFrame {
 
 =======
         setVisible(false);
-        adminAddUser object = new AdminAddUser();
+        adminAddUser object = new adminAddUser();
         object.setVisible(true);
     }//GEN-LAST:event_btn_adduserActionPerformed
 

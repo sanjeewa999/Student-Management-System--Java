@@ -8,7 +8,7 @@ package techmis;
  *
  * @author ASUS
  */
-public class AdminStudent extends User{
+public class AdminStudent extends User implements AdminStudentInterface{
     
     private String ID;
     private String depId;
@@ -92,7 +92,8 @@ public class AdminStudent extends User{
         this.gender = gender;
     }
 
-    @Override
+   
+     @Override
     public void delete() {
         
     }
@@ -106,7 +107,6 @@ public class AdminStudent extends User{
     public void insert() {
         
     }
-    
     
     
 }

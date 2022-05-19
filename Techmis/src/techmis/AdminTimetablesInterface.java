@@ -10,4 +10,10 @@ package techmis;
  */
 public interface AdminTimetablesInterface {
     
+    public void insert();
+    
+    public void update();
+    
+    public void delete();
+    
 }
