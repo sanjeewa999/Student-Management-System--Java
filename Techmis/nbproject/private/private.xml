@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/D:/level%202/semester%201/java/java-mini-project/Java_Project/Techmis/src/techmis/studentMedical.java</file>
             <file>file:/D:/level%202/semester%201/java/java-mini-project/Java_Project/Techmis/src/techmis/adminCourse.java</file>
             <file>file:/D:/level%202/semester%201/java/java-mini-project/Java_Project/Techmis/src/techmis/studentNotice.java</file>
@@ -18,6 +19,25 @@
             <file>file:/D:/level%202/semester%201/java/java-mini-project/Java_Project/Techmis/src/techmis/studentupdate.java</file>
             <file>file:/D:/level%202/semester%201/java/java-mini-project/Java_Project/Techmis/src/techmis/StudentLogin.java</file>
             <file>file:/D:/level%202/semester%201/java/java-mini-project/Java_Project/Techmis/src/techmis/adminAddUser.java</file>
+=======
+            <file>file:/D:/Java_Project/Techmis/src/techmis/adminAddLecturer.java</file>
+            <file>file:/D:/Java_Project/Techmis/src/techmis/tecoaddmedical.java</file>
+            <file>file:/D:/Java_Project/Techmis/src/techmis/tecologin.java</file>
+            <file>file:/D:/Java_Project/Techmis/src/techmis/adminLogin.java</file>
+            <file>file:/D:/Java_Project/Techmis/src/techmis/tecoviewattendence.java</file>
+            <file>file:/D:/Java_Project/Techmis/src/techmis/User.java</file>
+            <file>file:/D:/Java_Project/Techmis/src/techmis/adminAddTechofficer.java</file>
+            <file>file:/D:/Java_Project/Techmis/src/techmis/adminAddUser.java</file>
+            <file>file:/D:/Java_Project/Techmis/src/techmis/adminDashboard.java</file>
+            <file>file:/D:/Java_Project/Techmis/src/techmis/tecoaddattendence.java</file>
+            <file>file:/D:/Java_Project/Techmis/src/techmis/tecotimetable.java</file>
+            <file>file:/D:/Java_Project/Techmis/src/techmis/adminAddStudent.java</file>
+            <file>file:/D:/Java_Project/Techmis/src/techmis/tecoviewmedicals.java</file>
+            <file>file:/D:/Java_Project/Techmis/src/techmis/tecodashboard.java</file>
+            <file>file:/D:/Java_Project/Techmis/src/techmis/DBConnection.java</file>
+            <file>file:/D:/Java_Project/Techmis/src/techmis/mainLogin.java</file>
+            <file>file:/D:/Java_Project/Techmis/src/techmis/teconotice.java</file>
+>>>>>>> 9b438d0a42fde00165b3b94b36cffa83074c51eb
         </group>
     </open-files>
 </project-private>

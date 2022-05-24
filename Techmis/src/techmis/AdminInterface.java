@@ -10,4 +10,10 @@ package techmis;
  */
 public interface AdminInterface {
     
+    public void insert();
+    
+    public void update();
+    
+    public void delete();
+    
 }

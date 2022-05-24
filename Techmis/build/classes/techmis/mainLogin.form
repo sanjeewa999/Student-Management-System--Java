@@ -73,7 +73,7 @@
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btn_st" min="-2" pref="155" max="-2" attributes="0"/>
+                      <Component id="btn_stu" min="-2" pref="155" max="-2" attributes="0"/>
                       <Component id="btn_to" min="-2" pref="155" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
@@ -118,7 +118,7 @@
                           </Group>
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="btn_st" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_stu" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btn_lec" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
@@ -200,8 +200,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Lecturer"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_lecActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btn_st">
+        <Component class="javax.swing.JButton" name="btn_stu">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="0" red="ff" type="rgb"/>
@@ -214,6 +217,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Student"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_stuActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_admin">
           <Properties>
