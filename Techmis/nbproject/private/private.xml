@@ -3,21 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Lectures/Level%202%20Semester%201/Object%20Oriented%20Development/Java_Project/Techmis/src/techmis/adminViewUser.java</file>
-            <file>file:/D:/Lectures/Level%202%20Semester%201/Object%20Oriented%20Development/Java_Project/Techmis/src/techmis/Admin.java</file>
-            <file>file:/D:/Lectures/Level%202%20Semester%201/Object%20Oriented%20Development/Java_Project/Techmis/src/techmis/adminTimetable.java</file>
-            <file>file:/D:/Lectures/Level%202%20Semester%201/Object%20Oriented%20Development/Java_Project/Techmis/src/techmis/User.java</file>
-            <file>file:/D:/Lectures/Level%202%20Semester%201/Object%20Oriented%20Development/Java_Project/Techmis/src/techmis/adminCourse.java</file>
-            <file>file:/D:/Lectures/Level%202%20Semester%201/Object%20Oriented%20Development/Java_Project/Techmis/src/techmis/firstInterface.java</file>
-            <file>file:/D:/Lectures/Level%202%20Semester%201/Object%20Oriented%20Development/Java_Project/Techmis/src/techmis/adminNotice.java</file>
-            <file>file:/D:/Lectures/Level%202%20Semester%201/Object%20Oriented%20Development/Java_Project/Techmis/src/techmis/AdminInterface.java</file>
-            <file>file:/D:/Lectures/Level%202%20Semester%201/Object%20Oriented%20Development/Java_Project/Techmis/src/techmis/DBConnection.java</file>
-            <file>file:/D:/Lectures/Level%202%20Semester%201/Object%20Oriented%20Development/Java_Project/Techmis/src/techmis/adminAddUser.java</file>
-            <file>file:/D:/Lectures/Level%202%20Semester%201/Object%20Oriented%20Development/Java_Project/Techmis/src/techmis/adminLogin.java</file>
-            <file>file:/D:/Lectures/Level%202%20Semester%201/Object%20Oriented%20Development/Java_Project/Techmis/src/techmis/UserInteface.java</file>
-            <file>file:/D:/Lectures/Level%202%20Semester%201/Object%20Oriented%20Development/Java_Project/Techmis/src/techmis/mainLogin.java</file>
-            <file>file:/D:/Lectures/Level%202%20Semester%201/Object%20Oriented%20Development/Java_Project/Techmis/src/techmis/adminDashboard.java</file>
-            <file>file:/D:/Lectures/Level%202%20Semester%201/Object%20Oriented%20Development/Java_Project/Techmis/src/techmis/StudentLogin.java</file>
+            <file>file:/D:/level%202/semester%201/java/java-mini-project/Java_Project/Techmis/src/techmis/studentMedical.java</file>
+            <file>file:/D:/level%202/semester%201/java/java-mini-project/Java_Project/Techmis/src/techmis/adminCourse.java</file>
+            <file>file:/D:/level%202/semester%201/java/java-mini-project/Java_Project/Techmis/src/techmis/studentNotice.java</file>
+            <file>file:/D:/level%202/semester%201/java/java-mini-project/Java_Project/Techmis/src/techmis/studentTimetable.java</file>
+            <file>file:/D:/level%202/semester%201/java/java-mini-project/Java_Project/Techmis/src/techmis/mainLogin.java</file>
+            <file>file:/D:/level%202/semester%201/java/java-mini-project/Java_Project/Techmis/src/techmis/adminNotice.java</file>
+            <file>file:/D:/level%202/semester%201/java/java-mini-project/Java_Project/Techmis/src/techmis/adminTimetable.java</file>
+            <file>file:/D:/level%202/semester%201/java/java-mini-project/Java_Project/Techmis/src/techmis/User.java</file>
+            <file>file:/D:/level%202/semester%201/java/java-mini-project/Java_Project/Techmis/src/techmis/adminDashboard.java</file>
+            <file>file:/D:/level%202/semester%201/java/java-mini-project/Java_Project/Techmis/src/techmis/fac_logo.png</file>
+            <file>file:/D:/level%202/semester%201/java/java-mini-project/Java_Project/Techmis/src/techmis/student.png</file>
+            <file>file:/D:/level%202/semester%201/java/java-mini-project/Java_Project/Techmis/src/techmis/adminLogin.java</file>
+            <file>file:/D:/level%202/semester%201/java/java-mini-project/Java_Project/Techmis/src/techmis/studentupdate.java</file>
+            <file>file:/D:/level%202/semester%201/java/java-mini-project/Java_Project/Techmis/src/techmis/StudentLogin.java</file>
+            <file>file:/D:/level%202/semester%201/java/java-mini-project/Java_Project/Techmis/src/techmis/adminAddUser.java</file>
         </group>
     </open-files>
 </project-private>
