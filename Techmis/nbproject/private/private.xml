@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
             <file>file:/D:/level%202/semester%201/java/java-mini-project/Java_Project/Techmis/src/techmis/studentMedical.java</file>
             <file>file:/D:/level%202/semester%201/java/java-mini-project/Java_Project/Techmis/src/techmis/adminCourse.java</file>
@@ -38,6 +39,13 @@
             <file>file:/D:/Java_Project/Techmis/src/techmis/mainLogin.java</file>
             <file>file:/D:/Java_Project/Techmis/src/techmis/teconotice.java</file>
 >>>>>>> 9b438d0a42fde00165b3b94b36cffa83074c51eb
+=======
+            <file>file:/C:/Users/ASUS/Documents/GitHub/Java_Project/Techmis/src/techmis/Lecturer.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/Java_Project/Techmis/src/techmis/LecturerForm.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/Java_Project/Techmis/src/techmis/LecturerDAOimp.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/Java_Project/Techmis/src/techmis/LecturerDAO.java</file>
+            <file>file:/C:/Users/ASUS/Documents/GitHub/Java_Project/Techmis/src/techmis/LecturerDashboard.java</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>
