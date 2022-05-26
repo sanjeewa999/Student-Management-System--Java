@@ -29,12 +29,10 @@ public class tecodashboard extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        btn_adduser = new javax.swing.JButton();
-        btn_adduser1 = new javax.swing.JButton();
+        addattendancebtn = new javax.swing.JButton();
         btn_adduser2 = new javax.swing.JButton();
-        btn_adduser3 = new javax.swing.JButton();
-        btn_adduser4 = new javax.swing.JButton();
-        btn_adduser5 = new javax.swing.JButton();
+        timmetablebtn = new javax.swing.JButton();
+        noticebtn = new javax.swing.JButton();
         btn_back = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
@@ -48,23 +46,13 @@ public class tecodashboard extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 204));
         jLabel1.setText("Welcome Technical officer ");
 
-        btn_adduser.setBackground(new java.awt.Color(204, 0, 51));
-        btn_adduser.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btn_adduser.setForeground(new java.awt.Color(255, 255, 0));
-        btn_adduser.setText("ADD ATTENDENCE");
-        btn_adduser.addActionListener(new java.awt.event.ActionListener() {
+        addattendancebtn.setBackground(new java.awt.Color(204, 0, 51));
+        addattendancebtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        addattendancebtn.setForeground(new java.awt.Color(255, 255, 0));
+        addattendancebtn.setText("ADD ATTENDENCE");
+        addattendancebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_adduserActionPerformed(evt);
-            }
-        });
-
-        btn_adduser1.setBackground(new java.awt.Color(204, 0, 51));
-        btn_adduser1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btn_adduser1.setForeground(new java.awt.Color(255, 255, 0));
-        btn_adduser1.setText("VIEW ATTENDENCE");
-        btn_adduser1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_adduser1ActionPerformed(evt);
+                addattendancebtnActionPerformed(evt);
             }
         });
 
@@ -78,33 +66,23 @@ public class tecodashboard extends javax.swing.JFrame {
             }
         });
 
-        btn_adduser3.setBackground(new java.awt.Color(204, 0, 51));
-        btn_adduser3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btn_adduser3.setForeground(new java.awt.Color(255, 255, 0));
-        btn_adduser3.setText("TMETABLE");
-        btn_adduser3.addActionListener(new java.awt.event.ActionListener() {
+        timmetablebtn.setBackground(new java.awt.Color(204, 0, 51));
+        timmetablebtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        timmetablebtn.setForeground(new java.awt.Color(255, 255, 0));
+        timmetablebtn.setText("TIME TABLE");
+        timmetablebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_adduser3ActionPerformed(evt);
+                timmetablebtnActionPerformed(evt);
             }
         });
 
-        btn_adduser4.setBackground(new java.awt.Color(204, 0, 51));
-        btn_adduser4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btn_adduser4.setForeground(new java.awt.Color(255, 255, 0));
-        btn_adduser4.setText("VIEW MEDICAL");
-        btn_adduser4.addActionListener(new java.awt.event.ActionListener() {
+        noticebtn.setBackground(new java.awt.Color(204, 0, 51));
+        noticebtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        noticebtn.setForeground(new java.awt.Color(255, 255, 0));
+        noticebtn.setText("NOTICES");
+        noticebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_adduser4ActionPerformed(evt);
-            }
-        });
-
-        btn_adduser5.setBackground(new java.awt.Color(204, 0, 51));
-        btn_adduser5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btn_adduser5.setForeground(new java.awt.Color(255, 255, 0));
-        btn_adduser5.setText("NOTICES");
-        btn_adduser5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_adduser5ActionPerformed(evt);
+                noticebtnActionPerformed(evt);
             }
         });
 
@@ -125,58 +103,60 @@ public class tecodashboard extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 506, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btn_back)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(5, 5, 5)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btn_adduser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btn_adduser1, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
+                                .addGap(208, 208, 208)
+                                .addComponent(jLabel4))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btn_adduser4, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btn_adduser2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(123, 123, 123)
+                                        .addComponent(timmetablebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(126, 126, 126)
+                                        .addComponent(addattendancebtn)))
+                                .addGap(34, 34, 34)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btn_adduser5, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btn_adduser3, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                    .addComponent(btn_adduser2, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(noticebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btn_back)))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(208, 208, 208)
-                .addComponent(jLabel4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(addattendancebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn_adduser2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(btn_back)
+                                .addGap(40, 40, 40)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(91, 181, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn_adduser, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_adduser5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_adduser2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(33, 33, 33)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_adduser1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_adduser4, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_adduser3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                .addComponent(btn_back)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(noticebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(timmetablebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(82, 82, 82)))
                 .addComponent(jLabel4)
                 .addGap(7, 7, 7))
         );
@@ -197,35 +177,53 @@ public class tecodashboard extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_adduserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_adduserActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_adduserActionPerformed
-
-    private void btn_adduser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_adduser1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_adduser1ActionPerformed
+    private void addattendancebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addattendancebtnActionPerformed
+        
+        setVisible(false);
+        tecoaddattendence object = new tecoaddattendence();
+        object.setVisible(true); 
+    
+        
+        
+    }//GEN-LAST:event_addattendancebtnActionPerformed
 
     private void btn_adduser2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_adduser2ActionPerformed
-        // TODO add your handling code here:
+       
+           setVisible(false);
+        tecoaddmedical object = new tecoaddmedical();
+        object.setVisible(true); 
+    
+        
+        
+        
+        
     }//GEN-LAST:event_btn_adduser2ActionPerformed
 
-    private void btn_adduser3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_adduser3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_adduser3ActionPerformed
+    private void timmetablebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timmetablebtnActionPerformed
+        
+        
+            setVisible(false);
+        tecotimetable object = new tecotimetable();
+        object.setVisible(true); 
+        
+    }//GEN-LAST:event_timmetablebtnActionPerformed
 
-    private void btn_adduser4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_adduser4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_adduser4ActionPerformed
-
-    private void btn_adduser5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_adduser5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_adduser5ActionPerformed
+    private void noticebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noticebtnActionPerformed
+       
+        setVisible(false);
+        teconotice object = new teconotice();
+        object.setVisible(true);
+        
+        
+        
+    }//GEN-LAST:event_noticebtnActionPerformed
 
     private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
         setVisible(false);
-        tecologin object = new tecologin();
+        login object = new login();
         object.setVisible(true);
     }//GEN-LAST:event_btn_backActionPerformed
 
@@ -265,16 +263,14 @@ public class tecodashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_adduser;
-    private javax.swing.JButton btn_adduser1;
+    private javax.swing.JButton addattendancebtn;
     private javax.swing.JButton btn_adduser2;
-    private javax.swing.JButton btn_adduser3;
-    private javax.swing.JButton btn_adduser4;
-    private javax.swing.JButton btn_adduser5;
     private javax.swing.JButton btn_back;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton noticebtn;
+    private javax.swing.JButton timmetablebtn;
     // End of variables declaration//GEN-END:variables
 }

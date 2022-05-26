@@ -48,4 +48,21 @@ public class DBConnection { //start class
         //DBConnection db=new DBConnection();
         //db.connection();
     }
+    
+    public static Connection connect(){
+        
+        Connection conn=null;
+        
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            conn=DriverManager.getConnection("jdbc:mysql://localhost/mis","root","");
+            
+        } catch (Exception e) {
+            System.out.print(e);
+        }
+        
+    return conn;
+    }
+    
+    
 } //end class

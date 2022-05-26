@@ -63,8 +63,22 @@ public class tecoaddattendence extends javax.swing.JFrame {
                    v2.add(rs.getString("stu_id"));
                    v2.add(rs.getString("course_id"));
                    v2.add(rs.getString("day"));
-                   v2.add(rs.getString("type"));
-                   v2.add(rs.getString("status"));
+                   String type=rs.getString("type");
+                   String status=rs.getString("status");
+                       if (type.equals("T")) {
+                           v2.add("Theory");
+                       }
+                       else if (type.equals("P")) {
+                            v2.add("Practicle");
+                       }
+                   //v2.add(rs.getString("type"));
+                    if (status.equals("1")) {
+                           v2.add("Present");
+                       }
+                       else if (status.equals("0")) {
+                            v2.add("Absent");
+                       }
+                   
                    
                    }
                    Df.addRow(v2);
@@ -136,6 +150,7 @@ public class tecoaddattendence extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(750, 550));
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
@@ -312,10 +327,11 @@ public class tecoaddattendence extends javax.swing.JFrame {
                                     .addComponent(updatebtn, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
                                     .addComponent(deletebtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(addbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGap(205, 205, 205))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(81, 81, 81)
                         .addComponent(btn_back)
-                        .addGap(162, 162, 162)
+                        .addGap(45, 45, 45))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(241, 241, 241)
                         .addComponent(jLabel11)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -332,7 +348,9 @@ public class tecoaddattendence extends javax.swing.JFrame {
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_back)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(11, 11, 11)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -375,12 +393,9 @@ public class tecoaddattendence extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(addbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btn_back)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel11)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel11)
                 .addGap(66, 66, 66))
         );
 
@@ -407,7 +422,7 @@ public class tecoaddattendence extends javax.swing.JFrame {
 
     private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
         setVisible(false);
-        adminDashboard object = new adminDashboard();
+        tecodashboard object = new tecodashboard();
         object.setVisible(true);
     }//GEN-LAST:event_btn_backActionPerformed
 

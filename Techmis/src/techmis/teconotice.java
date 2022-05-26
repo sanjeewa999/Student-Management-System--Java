@@ -4,6 +4,9 @@
  */
 package techmis;
 
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author MSI
@@ -15,6 +18,7 @@ public class teconotice extends javax.swing.JFrame {
      */
     public teconotice() {
         initComponents();
+        Load();
     }
 
     /**
@@ -29,14 +33,14 @@ public class teconotice extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableNotice = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        txtdate = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        txttitle = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtnotice = new javax.swing.JTextArea();
         btn_back = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
 
@@ -49,7 +53,7 @@ public class teconotice extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 204));
         jLabel2.setText("NOTICES");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableNotice.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -60,15 +64,19 @@ public class teconotice extends javax.swing.JFrame {
                 "notice_id", "date", "title", "notice"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jTableNotice.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableNoticeMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jTableNotice);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 255, 204));
         jLabel5.setText("Notice :");
 
-        jTextField4.setBackground(new java.awt.Color(0, 102, 102));
-        jTextField4.setForeground(new java.awt.Color(255, 255, 204));
-        jTextField4.setText("jTextField1");
+        txtdate.setBackground(new java.awt.Color(0, 102, 102));
+        txtdate.setForeground(new java.awt.Color(255, 255, 204));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(204, 255, 204));
@@ -78,19 +86,19 @@ public class teconotice extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(204, 255, 204));
         jLabel7.setText("Date :");
 
-        jTextField5.setBackground(new java.awt.Color(0, 102, 102));
-        jTextField5.setForeground(new java.awt.Color(255, 255, 204));
-        jTextField5.setText("jTextField1");
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        txttitle.setBackground(new java.awt.Color(0, 102, 102));
+        txttitle.setForeground(new java.awt.Color(255, 255, 204));
+        txttitle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                txttitleActionPerformed(evt);
             }
         });
 
-        jTextArea1.setBackground(new java.awt.Color(0, 102, 102));
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        txtnotice.setBackground(new java.awt.Color(0, 102, 102));
+        txtnotice.setColumns(20);
+        txtnotice.setForeground(new java.awt.Color(255, 255, 204));
+        txtnotice.setRows(5);
+        jScrollPane2.setViewportView(txtnotice);
 
         btn_back.setBackground(new java.awt.Color(0, 102, 102));
         btn_back.setForeground(new java.awt.Color(204, 255, 255));
@@ -117,50 +125,47 @@ public class teconotice extends javax.swing.JFrame {
                         .addGap(99, 99, 99)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(74, 74, 74)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(74, 74, 74)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel5)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(btn_back)))
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel5))
                         .addGap(41, 41, 41)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtdate, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txttitle, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)))))
                 .addContainerGap(87, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btn_back)
+                .addGap(15, 15, 15))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addContainerGap()
+                .addComponent(btn_back)
+                .addGap(2, 2, 2)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txttitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btn_back)
-                        .addContainerGap())
-                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addComponent(jLabel11))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -175,17 +180,47 @@ public class teconotice extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+   public void Load()
+    {
+        NoticeDAOimp nimp = new NoticeDAOimp();
+        List< Notice> list = nimp.list();
+        DefaultTableModel DFT = (DefaultTableModel) jTableNotice.getModel();
+        DFT.setRowCount(0);
+        for( Notice notice: list)
+        {
+            int notice_id=notice.getNoticeId();
+            String notice_date=notice.getNoticeDate();
+            String notice_title=notice.getNoticeTitle();
+            String noticemsg=notice.getNotice();
+            
+            DFT.addRow(new Object[]{notice_id,notice_date,notice_title,noticemsg});
+        }      
+  
+    }
+    
+    private void txttitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txttitleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_txttitleActionPerformed
 
     private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
         setVisible(false);
-        adminDashboard object = new adminDashboard();
+        tecodashboard object = new tecodashboard();
         object.setVisible(true);
     }//GEN-LAST:event_btn_backActionPerformed
+
+    private void jTableNoticeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableNoticeMouseClicked
+       
+        DefaultTableModel Df = (DefaultTableModel)jTableNotice.getModel();
+         int selectedIndex = jTableNotice.getSelectedRow();
+           
+        txtdate.setText(Df.getValueAt(selectedIndex,1).toString());
+        txttitle.setText(Df.getValueAt(selectedIndex,2).toString());
+        txtnotice.setText(Df.getValueAt(selectedIndex,3).toString());
+        
+    
+    }//GEN-LAST:event_jTableNoticeMouseClicked
 
     /**
      * @param args the command line arguments
@@ -232,9 +267,9 @@ public class teconotice extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTable jTableNotice;
+    private javax.swing.JTextField txtdate;
+    private javax.swing.JTextArea txtnotice;
+    private javax.swing.JTextField txttitle;
     // End of variables declaration//GEN-END:variables
 }
