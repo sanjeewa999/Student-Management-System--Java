@@ -628,16 +628,8 @@ public class CAmarksForm extends javax.swing.JFrame {
         ca_mark=(float) (((max_quiz2 + max_quiz2) *0.2 )+(( max_ass1 + max_ass2 )*0.2) + (mid*0.2));
         
         
-        
-        
-        
-      
-        
-        CAmarksDAOimp dao = new CAmarksDAOimp();
-        dao.save(ca);
-        Load();
-        
-        JOptionPane.showMessageDialog(null, "Error");
+        System.out.println(ca_mark);
+       //JOptionPane.showMessageDialog(ca_mark);
       
         
 // TODO add your handling code here:

@@ -64,8 +64,8 @@ public class CAmarksDAOimp implements CAmarksDAO{
             ps.setFloat(8, camarks.getAss2());
             ps.setFloat(9, camarks.getAss3());
             ps.setFloat(10, camarks.getMid());
-            //ps.setString(10, camarks.getCourse_id());
             ps.setString(11, camarks.getStu_id());
+            ps.setString(12, camarks.getCourse_id());
             ps.executeUpdate();
   
         
