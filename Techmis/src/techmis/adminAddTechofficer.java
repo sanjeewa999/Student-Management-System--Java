@@ -4,6 +4,10 @@
  */
 package techmis;
 
+import java.util.Vector;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author ASUS
@@ -15,6 +19,20 @@ public class adminAddTechofficer extends javax.swing.JFrame {
      */
     public adminAddTechofficer() {
         initComponents();
+         displayTable();
+    }
+    
+    public void displayTable(){
+        AdminTecofficer Adtec = new AdminTecofficer();
+        
+        DefaultTableModel model=(DefaultTableModel)tec_tbl.getModel();
+        
+        model.setRowCount(0);
+        Adtec.loadlist();
+        
+        for (Object data : Adtec.getData()){
+            model.addRow((Vector<?>) data);
+        }
     }
 
     /**
@@ -37,22 +55,21 @@ public class adminAddTechofficer extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        id = new javax.swing.JTextField();
-        depid = new javax.swing.JTextField();
-        name = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        address = new javax.swing.JTextArea();
-        email = new javax.swing.JTextField();
-        dob = new javax.swing.JTextField();
-        contact = new javax.swing.JTextField();
+        tecid = new javax.swing.JTextField();
+        tdepid = new javax.swing.JTextField();
+        tname = new javax.swing.JTextField();
+        temail = new javax.swing.JTextField();
+        tdob = new javax.swing.JTextField();
+        tcontact = new javax.swing.JTextField();
         btn_add = new javax.swing.JButton();
         btn_update = new javax.swing.JButton();
         btn_delete = new javax.swing.JButton();
         backbtn1 = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        gender = new javax.swing.JComboBox<>();
+        tec_tbl = new javax.swing.JTable();
+        tgender = new javax.swing.JComboBox<>();
+        taddress = new javax.swing.JTextField();
 
         jPasswordField1.setText("jPasswordField1");
 
@@ -97,24 +114,35 @@ public class adminAddTechofficer extends javax.swing.JFrame {
         jLabel17.setForeground(new java.awt.Color(204, 255, 204));
         jLabel17.setText("Gender :");
 
-        address.setColumns(20);
-        address.setRows(5);
-        jScrollPane1.setViewportView(address);
-
         btn_add.setBackground(new java.awt.Color(102, 0, 102));
         btn_add.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btn_add.setForeground(new java.awt.Color(204, 153, 255));
         btn_add.setText("ADD");
+        btn_add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_addActionPerformed(evt);
+            }
+        });
 
         btn_update.setBackground(new java.awt.Color(102, 0, 102));
         btn_update.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btn_update.setForeground(new java.awt.Color(204, 153, 255));
         btn_update.setText("UPDATE");
+        btn_update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_updateActionPerformed(evt);
+            }
+        });
 
         btn_delete.setBackground(new java.awt.Color(102, 0, 102));
         btn_delete.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btn_delete.setForeground(new java.awt.Color(204, 153, 255));
         btn_delete.setText("DELETE");
+        btn_delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_deleteActionPerformed(evt);
+            }
+        });
 
         backbtn1.setBackground(new java.awt.Color(0, 102, 102));
         backbtn1.setForeground(new java.awt.Color(204, 255, 255));
@@ -128,7 +156,7 @@ public class adminAddTechofficer extends javax.swing.JFrame {
         jLabel18.setForeground(new java.awt.Color(204, 204, 204));
         jLabel18.setText("Faculty of Technology - University of Ruhuna");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tec_tbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -139,9 +167,14 @@ public class adminAddTechofficer extends javax.swing.JFrame {
                 "Tec_off_ID", "Tec_dep_ID", "Name", "Address", "Email", "DOB", "Contact", "Gender"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        tec_tbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tec_tblMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tec_tbl);
 
-        gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
+        tgender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -158,10 +191,10 @@ public class adminAddTechofficer extends javax.swing.JFrame {
                             .addComponent(jLabel13))
                         .addGap(57, 57, 57)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(depid, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                            .addComponent(name, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(id))
+                            .addComponent(tdepid, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                            .addComponent(tname, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tecid)
+                            .addComponent(taddress))
                         .addGap(78, 78, 78)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel14)
@@ -172,10 +205,10 @@ public class adminAddTechofficer extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(dob, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(contact, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(gender, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(temail, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tdob, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(tcontact, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tgender, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(58, 58, 58)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -202,16 +235,16 @@ public class adminAddTechofficer extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tecid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14)
-                    .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(temail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
-                            .addComponent(depid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tdepid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tdob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel15))
                         .addGap(18, 18, 18))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -224,17 +257,18 @@ public class adminAddTechofficer extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel12)
-                            .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel16)
-                            .addComponent(contact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tcontact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel13)
+                                .addComponent(taddress, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel17)
-                            .addComponent(gender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(tgender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(btn_delete, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(58, 58, 58)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -253,7 +287,7 @@ public class adminAddTechofficer extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 87, Short.MAX_VALUE))
+                .addGap(0, 28, Short.MAX_VALUE))
         );
 
         pack();
@@ -264,6 +298,89 @@ public class adminAddTechofficer extends javax.swing.JFrame {
         adminDashboard object = new adminDashboard();
         object.setVisible(true);
     }//GEN-LAST:event_backbtn1ActionPerformed
+
+    private void btn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addActionPerformed
+        AdminTecofficer Adtec = new AdminTecofficer();
+        
+        String ID = tecid.getText();
+        String Tec_dep = tdepid.getText();
+        String Tec_name= tname.getText();
+        String Tec_address = taddress.getText();
+        String Tec_email = temail.getText();
+        String Tec_dob = tdob.getText();
+        Integer Tec_contact= Integer.parseInt(tcontact.getText());
+        String Tec_gender = (String) tgender.getSelectedItem();
+        
+        Adtec.setID(ID);
+        Adtec.setDepId(Tec_dep);
+        Adtec.setName(Tec_name);
+        Adtec.setAddress(Tec_address);
+        Adtec.setEmail(Tec_email);
+        Adtec.setDob(Tec_dob);
+        Adtec.setMobile(SOMEBITS);
+        Adtec.setGender(Tec_gender);
+        
+        Adtec.insert();
+        displayTable();
+    }//GEN-LAST:event_btn_addActionPerformed
+
+    private void btn_updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updateActionPerformed
+        AdminTecofficer Adtec = new AdminTecofficer();
+        
+        String ID = tecid.getText();
+        String Tec_dep = tdepid.getText();
+        String Tec_name= tname.getText();
+        String Tec_address = taddress.getText();
+        String Tec_email = temail.getText();
+        String Tec_dob = tdob.getText();
+        Integer Tec_contact= Integer.parseInt(tcontact.getText());
+        String Tec_gender = (String) tgender.getSelectedItem();
+        
+        Adtec.setID(ID);
+        Adtec.setDepId(Tec_dep);
+        Adtec.setName(Tec_name);
+        Adtec.setAddress(Tec_address);
+        Adtec.setEmail(Tec_email);
+        Adtec.setDob(Tec_dob);
+        Adtec.setMobile(SOMEBITS);
+        Adtec.setGender(Tec_gender);
+        
+        Adtec.update();
+        displayTable();
+    }//GEN-LAST:event_btn_updateActionPerformed
+
+    private void btn_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deleteActionPerformed
+        try {
+            AdminTecofficer Adtec = new AdminTecofficer();
+            DefaultTableModel model=(DefaultTableModel)tec_tbl.getModel();
+        
+            model.setRowCount(0);
+            Adtec.loadlist();
+        
+        for (Object data : Adtec.getData()){
+            model.addRow((Vector<?>) data);
+        }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_btn_deleteActionPerformed
+
+    private void tec_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tec_tblMouseClicked
+        try {
+            DefaultTableModel d=(DefaultTableModel)tec_tbl.getModel();
+            int Index=tec_tbl.getSelectedRow();
+            
+            tecid.setText(d.getValueAt(Index, 0).toString());
+            tdepid.setText(d.getValueAt(Index, 1).toString());
+            tname.setText(d.getValueAt(Index, 2).toString());
+            taddress.setText(d.getValueAt(Index, 3).toString());
+            temail.setText(d.getValueAt(Index, 4).toString());
+            tdob.setText(d.getValueAt(Index, 5).toString());
+            tcontact.setText(d.getValueAt(Index, 6).toString());
+            tgender.setSelectedItem(d.getValueAt(Index, 7).toString());
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_tec_tblMouseClicked
 
     /**
      * @param args the command line arguments
@@ -301,17 +418,10 @@ public class adminAddTechofficer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea address;
     private javax.swing.JButton backbtn1;
     private javax.swing.JButton btn_add;
     private javax.swing.JButton btn_delete;
     private javax.swing.JButton btn_update;
-    private javax.swing.JTextField contact;
-    private javax.swing.JTextField depid;
-    private javax.swing.JTextField dob;
-    private javax.swing.JTextField email;
-    private javax.swing.JComboBox<String> gender;
-    private javax.swing.JTextField id;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -324,9 +434,15 @@ public class adminAddTechofficer extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField name;
+    private javax.swing.JTextField taddress;
+    private javax.swing.JTextField tcontact;
+    private javax.swing.JTextField tdepid;
+    private javax.swing.JTextField tdob;
+    private javax.swing.JTable tec_tbl;
+    private javax.swing.JTextField tecid;
+    private javax.swing.JTextField temail;
+    private javax.swing.JComboBox<String> tgender;
+    private javax.swing.JTextField tname;
     // End of variables declaration//GEN-END:variables
 }

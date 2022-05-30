@@ -29,7 +29,7 @@ public class tecoaddattendence extends javax.swing.JFrame {
      * 
      */
      Connection con1;
-            PreparedStatement insert;
+     PreparedStatement insert;
             
             
             

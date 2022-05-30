@@ -4,12 +4,22 @@
  */
 package techmis;
 
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ASUS
  */
 public class adminTimetable extends javax.swing.JFrame {
-
+     Connection con1;
+     PreparedStatement insert;
+    
     /**
      * Creates new form adminTimetable
      */
@@ -39,29 +49,31 @@ public class adminTimetable extends javax.swing.JFrame {
         courseidLabel6 = new javax.swing.JLabel();
         courseidLabel7 = new javax.swing.JLabel();
         courseidLabel8 = new javax.swing.JLabel();
-        department = new javax.swing.JTextField();
         level = new javax.swing.JComboBox<>();
         semester = new javax.swing.JComboBox<>();
         date = new javax.swing.JComboBox<>();
-        course = new javax.swing.JTextField();
-        course1 = new javax.swing.JTextField();
-        course2 = new javax.swing.JTextField();
-        start = new javax.swing.JTextField();
-        start1 = new javax.swing.JTextField();
-        start2 = new javax.swing.JTextField();
-        end = new javax.swing.JTextField();
-        end1 = new javax.swing.JTextField();
-        end2 = new javax.swing.JTextField();
-        loc = new javax.swing.JTextField();
-        loc1 = new javax.swing.JTextField();
-        loc2 = new javax.swing.JTextField();
-        type = new javax.swing.JComboBox<>();
-        type1 = new javax.swing.JComboBox<>();
-        type2 = new javax.swing.JComboBox<>();
+        c1name = new javax.swing.JTextField();
+        c2name = new javax.swing.JTextField();
+        c3name = new javax.swing.JTextField();
+        cstart1 = new javax.swing.JTextField();
+        cstart2 = new javax.swing.JTextField();
+        cstart3 = new javax.swing.JTextField();
+        cend1 = new javax.swing.JTextField();
+        cend2 = new javax.swing.JTextField();
+        cend3 = new javax.swing.JTextField();
+        cloc1 = new javax.swing.JTextField();
+        cloc2 = new javax.swing.JTextField();
+        cloc3 = new javax.swing.JTextField();
+        ctype1 = new javax.swing.JComboBox<>();
+        ctype2 = new javax.swing.JComboBox<>();
+        ctype3 = new javax.swing.JComboBox<>();
         btn_add = new javax.swing.JButton();
-        btn_delete = new javax.swing.JButton();
         backbtn = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
+        department = new javax.swing.JComboBox<>();
+        cse1 = new javax.swing.JCheckBox();
+        cse2 = new javax.swing.JCheckBox();
+        cse3 = new javax.swing.JCheckBox();
 
         jLabel1.setBackground(new java.awt.Color(204, 0, 51));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -115,33 +127,51 @@ public class adminTimetable extends javax.swing.JFrame {
         courseidLabel8.setForeground(new java.awt.Color(204, 255, 204));
         courseidLabel8.setText("Type");
 
-        department.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                departmentActionPerformed(evt);
-            }
-        });
-
         level.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "level 1", "level 2", "level 3", "level 4" }));
 
         semester.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "semester 1", "semester 2" }));
 
         date.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Monday", "Tuesday", "Wednesday", "Thrusday", "Friday" }));
 
-        type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Theory", "Practical" }));
+        c1name.setEnabled(false);
 
-        type1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Theory", "Practical" }));
+        c2name.setEnabled(false);
 
-        type2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Theory", "Practical" }));
+        c3name.setEnabled(false);
+
+        cstart1.setEnabled(false);
+
+        cstart2.setEnabled(false);
+
+        cstart3.setEnabled(false);
+
+        cend1.setEnabled(false);
+
+        cend2.setEnabled(false);
+
+        cend3.setEnabled(false);
+
+        cloc1.setEnabled(false);
+
+        cloc2.setEnabled(false);
+
+        cloc3.setEnabled(false);
+
+        ctype1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Theory", "Practical" }));
+
+        ctype2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Theory", "Practical" }));
+
+        ctype3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Theory", "Practical" }));
 
         btn_add.setBackground(new java.awt.Color(153, 153, 255));
-        btn_add.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btn_add.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btn_add.setForeground(new java.awt.Color(153, 51, 0));
         btn_add.setText("ADD");
-
-        btn_delete.setBackground(new java.awt.Color(153, 153, 255));
-        btn_delete.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btn_delete.setForeground(new java.awt.Color(153, 51, 0));
-        btn_delete.setText("DELETE");
+        btn_add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_addActionPerformed(evt);
+            }
+        });
 
         backbtn.setBackground(new java.awt.Color(0, 102, 102));
         backbtn.setForeground(new java.awt.Color(204, 255, 255));
@@ -155,26 +185,112 @@ public class adminTimetable extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(204, 204, 204));
         jLabel11.setText("Faculty of Technology - University of Ruhuna");
 
+        department.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Department of ICT" }));
+
+        cse1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        cse1.setForeground(new java.awt.Color(255, 0, 102));
+        cse1.setText("Course 1");
+        cse1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cse1ActionPerformed(evt);
+            }
+        });
+
+        cse2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        cse2.setForeground(new java.awt.Color(255, 0, 102));
+        cse2.setText("Course 2");
+        cse2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cse2ActionPerformed(evt);
+            }
+        });
+
+        cse3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        cse3.setForeground(new java.awt.Color(255, 0, 102));
+        cse3.setText("Course 3");
+        cse3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cse3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(backbtn)
+                .addGap(153, 153, 153)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(284, 284, 284)
-                            .addComponent(jLabel2))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(35, 35, 35)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(229, 229, 229)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cend2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cend1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cend3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(40, 40, 40)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cloc1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cloc2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cloc3, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(47, 47, 47)
+                                .addComponent(ctype1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ctype2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ctype3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel11)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(courseidLabel6)
+                        .addGap(89, 89, 89)
+                        .addComponent(courseidLabel7)
+                        .addGap(66, 66, 66)
+                        .addComponent(courseidLabel8)
+                        .addGap(32, 32, 32)))
+                .addGap(48, 48, 48))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(284, 284, 284)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(courseidLabel)
                                 .addComponent(courseidLabel1, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addGap(32, 32, 32)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(department)
-                                .addComponent(level, 0, 150, Short.MAX_VALUE))
-                            .addGap(69, 69, 69)
+                            .addComponent(cse1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cse2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cse3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(level, 0, 150, Short.MAX_VALUE)
+                                    .addComponent(department, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(56, 56, 56))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(84, 84, 84)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addComponent(courseidLabel5)
+                                        .addGap(83, 83, 83))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(c2name, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(c1name, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(c3name, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(66, 66, 66)))))
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(courseidLabel3)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -182,61 +298,19 @@ public class adminTimetable extends javax.swing.JFrame {
                                     .addGap(40, 40, 40)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(date, 0, 150, Short.MAX_VALUE)
-                                        .addComponent(semester, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(78, 78, 78)
-                                    .addComponent(courseidLabel5)
-                                    .addGap(71, 71, 71)
-                                    .addComponent(courseidLabel4)
-                                    .addGap(87, 87, 87)
-                                    .addComponent(courseidLabel6)
-                                    .addGap(86, 86, 86)
-                                    .addComponent(courseidLabel7))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(55, 55, 55)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(course1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(course, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(course2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(30, 30, 30)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(start, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(start2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(start1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(35, 35, 35)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(end, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(end2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(end1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(33, 33, 33)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(loc1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(loc2, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(loc, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(41, 41, 41)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(type, 0, 86, Short.MAX_VALUE)
-                                        .addComponent(type1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(type2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(courseidLabel8)
-                                    .addGap(28, 28, 28)))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(backbtn)
-                        .addGap(153, 153, 153)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
+                                        .addComponent(semester, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(courseidLabel4))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(54, 54, 54)
-                                .addComponent(btn_delete, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(102, Short.MAX_VALUE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(cstart2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cstart1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cstart3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(190, 190, 190))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(121, 121, 121)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,8 +321,8 @@ public class adminTimetable extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(courseidLabel)
                     .addComponent(courseidLabel2)
-                    .addComponent(department, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(semester, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(semester, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(department, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(courseidLabel1)
@@ -264,30 +338,31 @@ public class adminTimetable extends javax.swing.JFrame {
                     .addComponent(courseidLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(course, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(start, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(end, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(loc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(c1name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cstart1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cend1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cloc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ctype1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cse1))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(course1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(start1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(end1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(loc1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(type1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(c2name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cstart2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cend2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cloc2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ctype2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cse2))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(course2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(start2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(end2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(loc2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(type2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_add)
-                    .addComponent(btn_delete))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                    .addComponent(c3name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cstart3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cend3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cloc3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ctype3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cse3))
+                .addGap(18, 18, 18)
+                .addComponent(btn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backbtn)
                     .addComponent(jLabel11))
@@ -308,15 +383,384 @@ public class adminTimetable extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void departmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_departmentActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_departmentActionPerformed
-
     private void backbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbtnActionPerformed
         setVisible(false);
         adminDashboard object = new adminDashboard();
         object.setVisible(true);
     }//GEN-LAST:event_backbtnActionPerformed
+
+    private void btn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addActionPerformed
+        
+        String dep=(String)department.getSelectedItem();
+        String levels=(String)level.getSelectedItem();
+        String sem=(String)semester.getSelectedItem();
+        String dates=(String)date.getSelectedItem();
+        
+        if(this.cse1.isSelected()){
+            String cName=c1name.getText();
+            String cFrom=cstart1.getText();
+            String cTo=cend1.getText();
+            String cLoc=cloc1.getText();
+            String cType=(String)ctype1.getSelectedItem();
+            try {
+                
+                Class.forName("com.mysql.cj.jdbc.Driver");
+               con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/mis","root","");
+                    
+                insert=con1.prepareStatement("INSERT INTO time_table( dep_id, level,semester, date,course_name, start_time, end_time, location, type)VALUES (?,?,?,?,?,?,?,?,?)");
+                insert.setString(1,dep);
+                insert.setString(2,levels);
+                insert.setString(3, sem);
+                insert.setString(4,dates);
+                insert.setString(5, cName);
+                insert.setString(6, cFrom);
+                insert.setString(7, cTo);
+                insert.setString(8, cLoc);
+                insert.setString(9, cType);
+                
+                if(cName.isEmpty() || cFrom.isEmpty() || cTo.isEmpty() || cLoc.isEmpty() ){
+
+                    JOptionPane.showMessageDialog(this,"Please fill the all the fields");
+               
+                }else{
+                    JOptionPane.showMessageDialog(this,"Time table data is add!!");
+                    insert.executeUpdate();
+                    
+ 
+            }
+           
+        } catch (ClassNotFoundException classNotFoundException) {
+                System.out.println("File not found");
+
+        } catch (SQLException ex) {
+            //Logger.getLogger(Lmarks.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }
+        
+        if(this.cse2.isSelected()){
+            String cName=c2name.getText();
+            String cFrom=cstart2.getText();
+            String cTo=cend2.getText();
+            String cLoc=cloc2.getText();
+            String cType=(String)ctype2.getSelectedItem();
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/mis","root","");
+                insert=con1.prepareStatement("INSERT INTO time_table( dep_id, level,semester, date,course_name, start_time, end_time, location, type)VALUES (?,?,?,?,?,?,?,?,?)");
+                insert.setString(1, dep);
+                insert.setString(2, levels);
+                insert.setString(3, sem);
+                insert.setString(4, dates);
+                
+                insert.setString(5, cName);
+                insert.setString(6, cFrom);
+                insert.setString(7, cTo);
+                insert.setString(8, cLoc);
+                insert.setString(9, cType);
+                
+                if(cName.isEmpty() || cFrom.isEmpty() || cTo.isEmpty() || cLoc.isEmpty() ){
+
+                    JOptionPane.showMessageDialog(this,"Please fill the all the fields");
+               
+                }else{
+ 
+                   insert.executeUpdate();
+ 
+            }
+           
+        } catch (ClassNotFoundException classNotFoundException) {
+                System.out.println("File not found");
+
+        } catch (SQLException ex) {
+            //Logger.getLogger(Lmarks.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }
+        if(this.cse3.isSelected()){
+            String cName=c3name.getText();
+            String cFrom=cstart3.getText();
+            String cTo=cend3.getText();
+            String cLoc=cloc3.getText();
+            String cType=(String)ctype3.getSelectedItem();
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                con1=DriverManager.getConnection("jdbc:mysql://localhost:3306/mis","root","");
+                insert=con1.prepareStatement("INSERT INTO time_table( dep_id, level,semester, date,course_name, start_time, end_time, location, type)VALUES (?,?,?,?,?,?,?,?,?)");
+                insert.setString(1, dep);
+                insert.setString(2, levels);
+                insert.setString(3, sem);
+                insert.setString(4, dates);
+                
+                insert.setString(5, cName);
+                insert.setString(6, cFrom);
+                insert.setString(7, cTo);
+                insert.setString(8, cLoc);
+                insert.setString(9, cType);
+                
+                if(cName.isEmpty() || cFrom.isEmpty() || cTo.isEmpty() || cLoc.isEmpty() ){
+
+                    JOptionPane.showMessageDialog(this,"Please fill the all the fields");
+               
+                }else{
+ 
+                       insert.executeUpdate();
+ 
+            }
+           
+
+        } catch (ClassNotFoundException classNotFoundException) {
+                System.out.println("File not found");
+
+        } catch (SQLException ex) {
+            //Logger.getLogger(Lmarks.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }
+        
+        /*
+         String tdep=(String)tdep1.getSelectedItem();
+            String tlevel=(String)tlevel1.getSelectedItem();
+            String tSem=(String)tsem1.getSelectedItem();
+            String tDate=(String)tdate.getSelectedItem();
+           
+            if(this.sub1.isSelected()){
+                String subName=sub1name.getText();
+                String subFrom=sub1from.getText();
+                String subTo=sub1to.getText();
+                String subLoc=sub1loc.getText();
+                String tType=(String)sub1type.getSelectedItem();
+            try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn1=DriverManager.getConnection("jdbc:mysql://localhost:3306/fot_tecmis","root","");
+            insert=conn1.prepareStatement("INSERT INTO Time_Table( Department_ID, Level,Semester, Date,Subject_Name, Start_time, End_time, Location, Type)VALUES (?,?,?,?,?,?,?,?,?)");
+            insert.setString(1, tdep);
+            insert.setString(2, tlevel);
+            insert.setString(3,tSem );
+            insert.setString(4, tDate);
+           
+            insert.setString(5, subName);
+            insert.setString(6, subFrom);
+            insert.setString(7, subTo);
+            insert.setString(8, subLoc);
+            insert.setString(9, tType);
+
+
+            if(subName.isEmpty() || subFrom.isEmpty() || subTo.isEmpty() || subLoc.isEmpty() ){
+
+                JOptionPane.showMessageDialog(this,"Please fill the all the fields");
+               
+            }else{
+ 
+                    insert.executeUpdate();
+ 
+            }
+           
+
+        } catch (ClassNotFoundException classNotFoundException) {
+                System.out.println("File not found");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Lmarks.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+            }
+           if(this.sub2.isSelected()){
+                String subName=sub2name.getText();
+                String subFrom=sub2from.getText();
+                String subTo=sub2to.getText();
+                String subLoc=sub2loc.getText();
+                String tType=(String)sub2type.getSelectedItem();
+
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                conn1=DriverManager.getConnection("jdbc:mysql://localhost:3306/fot_tecmis","root","");
+                insert=conn1.prepareStatement("INSERT INTO Time_Table( Department_ID, Level,Semester, Date,Subject_Name, Start_time, End_time, Location, Type)VALUES (?,?,?,?,?,?,?,?,?)");
+                insert.setString(1, tdep);
+                insert.setString(2, tlevel);
+                insert.setString(3,tSem );
+                insert.setString(4, tDate);
+
+                insert.setString(5, subName);
+                insert.setString(6, subFrom);
+                insert.setString(7, subTo);
+                insert.setString(8, subLoc);
+                insert.setString(9, tType);
+
+
+                if(subName.isEmpty() || subFrom.isEmpty() || subTo.isEmpty() || subLoc.isEmpty() ){
+
+                    JOptionPane.showMessageDialog(this,"Please fill the all the fields");
+
+                }else{
+
+                        insert.executeUpdate();
+
+                }
+           
+
+                } catch (ClassNotFoundException classNotFoundException) {
+                        System.out.println("File not found");
+
+                } catch (SQLException ex) {
+                    Logger.getLogger(Lmarks.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+           if(this.sub3.isSelected()){
+                String subName=sub3name.getText();
+                String subFrom=sub3from.getText();
+                String subTo=sub3to.getText();
+                String subLoc=sub3loc.getText();
+                String tType=(String)sub3type.getSelectedItem();
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                conn1=DriverManager.getConnection("jdbc:mysql://localhost:3306/fot_tecmis","root","");
+                insert=conn1.prepareStatement("INSERT INTO Time_Table( Department_ID, Level,Semester, Date,Subject_Name, Start_time, End_time, Location, Type)VALUES (?,?,?,?,?,?,?,?,?)");
+                insert.setString(1, tdep);
+                insert.setString(2, tlevel);
+                insert.setString(3,tSem );
+                insert.setString(4, tDate);
+
+                insert.setString(5, subName);
+                insert.setString(6, subFrom);
+                insert.setString(7, subTo);
+                insert.setString(8, subLoc);
+                insert.setString(9, tType);
+
+
+                if(subName.isEmpty() || subFrom.isEmpty() || subTo.isEmpty() || subLoc.isEmpty() ){
+
+                    JOptionPane.showMessageDialog(this,"Please fill the all the fields");
+
+                }else{
+
+                        insert.executeUpdate();
+
+                }
+           
+
+                } catch (ClassNotFoundException classNotFoundException) {
+                        System.out.println("File not found");
+
+                } catch (SQLException ex) {
+                    Logger.getLogger(Lmarks.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+          if(this.sub4.isSelected()){
+                String subName=sub4name.getText();
+                String subFrom=sub4from.getText();
+                String subTo=sub4to.getText();
+                String subLoc=sub4loc.getText();
+                String tType=(String)sub4type.getSelectedItem();
+
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                conn1=DriverManager.getConnection("jdbc:mysql://localhost:3306/fot_tecmis","root","");
+                insert=conn1.prepareStatement("INSERT INTO Time_Table( Department_ID, Level,Semester, Date,Subject_Name, Start_time, End_time, Location, Type)VALUES (?,?,?,?,?,?,?,?,?)");
+                insert.setString(1, tdep);
+                insert.setString(2, tlevel);
+                insert.setString(3,tSem );
+                insert.setString(4, tDate);
+
+                insert.setString(5, subName);
+                insert.setString(6, subFrom);
+                insert.setString(7, subTo);
+                insert.setString(8, subLoc);
+                insert.setString(9, tType);
+
+
+                if(subName.isEmpty() || subFrom.isEmpty() || subTo.isEmpty() || subLoc.isEmpty() ){
+
+                    JOptionPane.showMessageDialog(this,"Please fill the all the fields");
+
+                }else{
+
+                        insert.executeUpdate();
+
+                }
+           
+
+                } catch (ClassNotFoundException classNotFoundException) {
+                        System.out.println("File not found");
+
+                } catch (SQLException ex) {
+                    Logger.getLogger(Lmarks.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+            }
+        */
+    }//GEN-LAST:event_btn_addActionPerformed
+
+    private void cse1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cse1ActionPerformed
+        if(cse1.isSelected()){
+            c1name.setEnabled(true);
+            cstart1.setEnabled(true);
+            cend1.setEnabled(true);
+            cloc1.setEnabled(true);
+        }else{
+            c1name.setEnabled(false);
+            cstart1.setEnabled(false);
+            cend1.setEnabled(false);
+            cloc1.setEnabled(false);
+            c1name.setText(null);
+            cstart1.setText(null);
+            cend1.setText(null);
+            cloc1.setText(null);
+        }
+        /*
+         if(sub1.isSelected()){
+            sub1name.setEnabled(true);
+            sub1from.setEnabled(true);
+            sub1to.setEnabled(true);
+            sub1loc.setEnabled(true);
+            sub1type.setEnabled(true);
+        } else {
+            sub1name.setEnabled(false);
+            sub1from.setEnabled(false);
+            sub1to.setEnabled(false);
+            sub1loc.setEnabled(false);
+            sub1name.setText(null);
+            sub1from.setText(null);
+            sub1to.setText(null);
+            sub1loc.setText(null);
+        }
+        */
+    }//GEN-LAST:event_cse1ActionPerformed
+
+    private void cse2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cse2ActionPerformed
+        if(cse2.isSelected()){
+            c2name.setEnabled(true);
+            cstart2.setEnabled(true);
+            cend2.setEnabled(true);
+            cloc2.setEnabled(true);
+        }else{
+            c2name.setEnabled(false);
+            cstart2.setEnabled(false);
+            cend2.setEnabled(false);
+            cloc2.setEnabled(false);
+            c2name.setText(null);
+            cstart2.setText(null);
+            cend2.setText(null);
+            cloc2.setText(null);
+        }
+    }//GEN-LAST:event_cse2ActionPerformed
+
+    private void cse3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cse3ActionPerformed
+       if(cse3.isSelected()){
+            c3name.setEnabled(true);
+            cstart3.setEnabled(true);
+            cend3.setEnabled(true);
+            cloc3.setEnabled(true);
+        }else{
+            c3name.setEnabled(false);
+            cstart3.setEnabled(false);
+            cend3.setEnabled(false);
+            cloc3.setEnabled(false);
+            c3name.setText(null);
+            cstart3.setText(null);
+            cend3.setText(null);
+            cloc3.setText(null);
+       }
+    }//GEN-LAST:event_cse3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -356,10 +800,15 @@ public class adminTimetable extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backbtn;
     private javax.swing.JButton btn_add;
-    private javax.swing.JButton btn_delete;
-    private javax.swing.JTextField course;
-    private javax.swing.JTextField course1;
-    private javax.swing.JTextField course2;
+    private javax.swing.JTextField c1name;
+    private javax.swing.JTextField c2name;
+    private javax.swing.JTextField c3name;
+    private javax.swing.JTextField cend1;
+    private javax.swing.JTextField cend2;
+    private javax.swing.JTextField cend3;
+    private javax.swing.JTextField cloc1;
+    private javax.swing.JTextField cloc2;
+    private javax.swing.JTextField cloc3;
     private javax.swing.JLabel courseidLabel;
     private javax.swing.JLabel courseidLabel1;
     private javax.swing.JLabel courseidLabel2;
@@ -369,26 +818,23 @@ public class adminTimetable extends javax.swing.JFrame {
     private javax.swing.JLabel courseidLabel6;
     private javax.swing.JLabel courseidLabel7;
     private javax.swing.JLabel courseidLabel8;
+    private javax.swing.JCheckBox cse1;
+    private javax.swing.JCheckBox cse2;
+    private javax.swing.JCheckBox cse3;
+    private javax.swing.JTextField cstart1;
+    private javax.swing.JTextField cstart2;
+    private javax.swing.JTextField cstart3;
+    private javax.swing.JComboBox<String> ctype1;
+    private javax.swing.JComboBox<String> ctype2;
+    private javax.swing.JComboBox<String> ctype3;
     private javax.swing.JComboBox<String> date;
-    private javax.swing.JTextField department;
-    private javax.swing.JTextField end;
-    private javax.swing.JTextField end1;
-    private javax.swing.JTextField end2;
+    private javax.swing.JComboBox<String> department;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JComboBox<String> level;
-    private javax.swing.JTextField loc;
-    private javax.swing.JTextField loc1;
-    private javax.swing.JTextField loc2;
     private javax.swing.JComboBox<String> semester;
-    private javax.swing.JTextField start;
-    private javax.swing.JTextField start1;
-    private javax.swing.JTextField start2;
-    private javax.swing.JComboBox<String> type;
-    private javax.swing.JComboBox<String> type1;
-    private javax.swing.JComboBox<String> type2;
     // End of variables declaration//GEN-END:variables
 }

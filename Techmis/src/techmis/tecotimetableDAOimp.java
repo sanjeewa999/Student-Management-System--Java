@@ -38,8 +38,8 @@ public class tecotimetableDAOimp {
                 tt.setTimetablesemester(rs.getString("semester"));
                 tt.setTimetabledate(rs.getString("date"));
                 tt.setTimetablecoursename(rs.getString("course_name"));
-                tt.setTimetablestart(rs.getString("start time"));
-                tt.setTimetableend(rs.getString("end time"));
+                tt.setTimetablestart(rs.getString("start_time"));
+                tt.setTimetableend(rs.getString("end_time"));
                 tt.setTimetableloc(rs.getString("location"));
                 tt.setTimetableloc(rs.getString("type"));
  

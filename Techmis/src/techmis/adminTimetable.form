@@ -65,25 +65,101 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="backbtn" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="284" max="-2" attributes="0"/>
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="229" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="cend2" min="-2" pref="71" max="-2" attributes="0"/>
+                              <Component id="cend1" min="-2" pref="71" max="-2" attributes="0"/>
+                              <Component id="cend3" min="-2" pref="71" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="cloc1" min="-2" pref="98" max="-2" attributes="0"/>
+                              <Component id="cloc2" min="-2" pref="98" max="-2" attributes="0"/>
+                              <Component id="cloc3" min="-2" pref="98" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                                  <Component id="ctype1" min="-2" pref="86" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="ctype2" alignment="1" min="-2" pref="86" max="-2" attributes="0"/>
+                                      <Component id="ctype3" alignment="1" min="-2" pref="86" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="courseidLabel6" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+                          <Component id="courseidLabel7" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                          <Component id="courseidLabel8" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="284" max="-2" attributes="0"/>
+                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="courseidLabel" min="-2" max="-2" attributes="0"/>
                                   <Component id="courseidLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="department" max="32767" attributes="0"/>
-                                  <Component id="level" pref="150" max="32767" attributes="0"/>
+                              <Component id="cse1" min="-2" pref="85" max="-2" attributes="0"/>
+                              <Component id="cse2" min="-2" pref="85" max="-2" attributes="0"/>
+                              <Component id="cse3" min="-2" pref="85" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="level" pref="150" max="32767" attributes="0"/>
+                                      <Component id="department" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="courseidLabel5" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="c2name" min="-2" pref="88" max="-2" attributes="0"/>
+                                              <Component id="c1name" min="-2" pref="88" max="-2" attributes="0"/>
+                                              <Component id="c3name" alignment="1" min="-2" pref="88" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                   <Component id="courseidLabel3" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="courseidLabel2" min="-2" max="-2" attributes="0"/>
@@ -93,79 +169,25 @@
                                           <Component id="semester" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
+                                  <Component id="courseidLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                                      <Component id="courseidLabel5" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-                                      <Component id="courseidLabel4" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
-                                      <Component id="courseidLabel6" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                                      <Component id="courseidLabel7" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="cstart2" min="-2" pref="71" max="-2" attributes="0"/>
+                                      <Component id="cstart1" min="-2" pref="71" max="-2" attributes="0"/>
+                                      <Component id="cstart3" alignment="1" min="-2" pref="71" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="course1" min="-2" pref="88" max="-2" attributes="0"/>
-                                          <Component id="course" min="-2" pref="88" max="-2" attributes="0"/>
-                                          <Component id="course2" alignment="1" min="-2" pref="88" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="start" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                                          <Component id="start2" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                                          <Component id="start1" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="end" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                                          <Component id="end2" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                                          <Component id="end1" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="loc1" min="-2" pref="98" max="-2" attributes="0"/>
-                                          <Component id="loc2" min="-2" pref="98" max="-2" attributes="0"/>
-                                          <Component id="loc" min="-2" pref="98" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="41" pref="41" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="type" alignment="0" pref="86" max="32767" attributes="0"/>
-                                          <Component id="type1" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="type2" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="courseidLabel8" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                  </Group>
+                                  <EmptySpace min="-2" pref="190" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="backbtn" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Component id="btn_add" min="-2" pref="77" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                                  <Component id="btn_delete" min="-2" pref="77" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="btn_add" min="-2" pref="146" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="102" max="32767" attributes="0"/>
+                  <EmptySpace min="49" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -178,8 +200,8 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="courseidLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="courseidLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="department" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="semester" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="department" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -198,34 +220,34 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="course" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="start" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="end" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="loc" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="type" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="c1name" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cstart1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cend1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cloc1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ctype1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cse1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="course1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="start1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="end1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="loc1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="type1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="c2name" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cstart2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cend2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cloc2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ctype2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cse2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="course2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="start2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="end2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="loc2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="type2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="c3name" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cstart3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cend3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cloc3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ctype3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cse3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btn_add" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btn_delete" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="36" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="btn_add" min="-2" pref="37" max="-2" attributes="0"/>
+                  <EmptySpace pref="30" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="backbtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -349,11 +371,6 @@
             <Property name="text" type="java.lang.String" value="Type"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="department">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="departmentActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JComboBox" name="level">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
@@ -398,31 +415,67 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="course">
+        <Component class="javax.swing.JTextField" name="c1name">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="course1">
+        <Component class="javax.swing.JTextField" name="c2name">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="course2">
+        <Component class="javax.swing.JTextField" name="c3name">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="start">
+        <Component class="javax.swing.JTextField" name="cstart1">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="start1">
+        <Component class="javax.swing.JTextField" name="cstart2">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="start2">
+        <Component class="javax.swing.JTextField" name="cstart3">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="end">
+        <Component class="javax.swing.JTextField" name="cend1">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="end1">
+        <Component class="javax.swing.JTextField" name="cend2">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="end2">
+        <Component class="javax.swing.JTextField" name="cend3">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="loc">
+        <Component class="javax.swing.JTextField" name="cloc1">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="loc1">
+        <Component class="javax.swing.JTextField" name="cloc2">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="loc2">
+        <Component class="javax.swing.JTextField" name="cloc3">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="type">
+        <Component class="javax.swing.JComboBox" name="ctype1">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="2">
@@ -435,7 +488,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="type1">
+        <Component class="javax.swing.JComboBox" name="ctype2">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="2">
@@ -448,7 +501,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="type2">
+        <Component class="javax.swing.JComboBox" name="ctype3">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="2">
@@ -467,27 +520,16 @@
               <Color blue="ff" green="99" red="99" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="12" style="1"/>
+              <Font name="Segoe UI" size="18" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="33" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="ADD"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btn_delete">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="99" red="99" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="12" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="33" red="99" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="DELETE"/>
-          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_addActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="backbtn">
           <Properties>
@@ -510,6 +552,60 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Faculty of Technology - University of Ruhuna"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="department">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="1">
+                <StringItem index="0" value="Department of ICT"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="cse1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="0" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Course 1"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cse1ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="cse2">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="0" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Course 2"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cse2ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="cse3">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="0" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Course 3"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cse3ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

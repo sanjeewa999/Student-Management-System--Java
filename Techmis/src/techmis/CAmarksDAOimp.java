@@ -1,5 +1,7 @@
 package techmis;
 
+
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -64,8 +66,8 @@ public class CAmarksDAOimp implements CAmarksDAO{
             ps.setFloat(8, camarks.getAss2());
             ps.setFloat(9, camarks.getAss3());
             ps.setFloat(10, camarks.getMid());
-            //ps.setString(10, camarks.getCourse_id());
             ps.setString(11, camarks.getStu_id());
+            ps.setString(12, camarks.getCourse_id());
             ps.executeUpdate();
   
         
@@ -80,7 +82,7 @@ public class CAmarksDAOimp implements CAmarksDAO{
     @Override
     public void delete(CAmarks camarks) {
         
-        try {
+         try {
           
             Connection con = LecturerDB.getConnection();
             String sql = "delete from ca_marks  WHERE stu_id=?";
@@ -92,6 +94,7 @@ public class CAmarksDAOimp implements CAmarksDAO{
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Error");
         }
+        
         
     }
 

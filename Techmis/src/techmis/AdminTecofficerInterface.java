@@ -16,4 +16,8 @@ public interface AdminTecofficerInterface {
     
     public void delete();
     
+    public void loadlist();
+    
+    public void notices();
+    
 }

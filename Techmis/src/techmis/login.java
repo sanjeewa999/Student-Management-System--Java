@@ -4,7 +4,7 @@
  */
 package techmis;
 
-import com.mysql.jdbc.PreparedStatement;
+import java.sql.PreparedStatement;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
@@ -88,8 +88,6 @@ public class login extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Nirmala UI", 3, 14)); // NOI18N
         jLabel2.setText("PASSWORD :");
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("D:\\Java_Project\\Images\\login.png")); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Black", 3, 36)); // NOI18N
         jLabel3.setText("Faculty Of Technology ");
@@ -206,9 +204,9 @@ public class login extends javax.swing.JFrame {
                 }
                 else if(user_role.equals("student")){
                 
-                     studentDashboard stu_dash=new studentDashboard();
+                     /*studentDashboard stu_dash=new studentDashboard();
                     stu_dash.setVisible(true);
-                    this.setVisible(false);  
+                    this.setVisible(false);  */
                 
                 
                 }

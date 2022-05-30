@@ -4,6 +4,10 @@
  */
 package techmis;
 
+import java.util.Vector;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author ASUS
@@ -15,7 +19,21 @@ public class adminAddAdmin extends javax.swing.JFrame {
      */
     public adminAddAdmin() {
         initComponents();
+        displayTable();
     }
+    public void displayTable(){
+        Admin Ad = new Admin();
+        
+        DefaultTableModel model=(DefaultTableModel)ad_tbl.getModel();
+        
+        model.setRowCount(0);
+        Ad.loadlist();
+        
+        for (Object data : Ad.getData()){
+            model.addRow((Vector<?>) data);
+        }
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,22 +54,21 @@ public class adminAddAdmin extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         fullname = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        address = new javax.swing.JTextArea();
-        email = new javax.swing.JTextField();
-        dob = new javax.swing.JTextField();
-        contact = new javax.swing.JTextField();
-        gender = new javax.swing.JComboBox<>();
-        role = new javax.swing.JTextField();
+        aemail = new javax.swing.JTextField();
+        adob = new javax.swing.JTextField();
+        acontact = new javax.swing.JTextField();
+        agender = new javax.swing.JComboBox<>();
+        arole = new javax.swing.JTextField();
         btn_add = new javax.swing.JButton();
         btn_update = new javax.swing.JButton();
         btn_delete = new javax.swing.JButton();
         backbtn = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        ad_tbl = new javax.swing.JTable();
         jLabel10 = new javax.swing.JLabel();
         id = new javax.swing.JTextField();
+        adaddress = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,32 +107,43 @@ public class adminAddAdmin extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(204, 255, 204));
         jLabel9.setText("Role :");
 
-        address.setColumns(20);
-        address.setRows(5);
-        jScrollPane1.setViewportView(address);
-
-        email.addActionListener(new java.awt.event.ActionListener() {
+        aemail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailActionPerformed(evt);
+                aemailActionPerformed(evt);
             }
         });
 
-        gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
+        agender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
 
         btn_add.setBackground(new java.awt.Color(102, 0, 102));
         btn_add.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btn_add.setForeground(new java.awt.Color(204, 153, 255));
         btn_add.setText("ADD");
+        btn_add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_addActionPerformed(evt);
+            }
+        });
 
         btn_update.setBackground(new java.awt.Color(102, 0, 102));
         btn_update.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btn_update.setForeground(new java.awt.Color(204, 153, 255));
         btn_update.setText("UPDATE");
+        btn_update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_updateActionPerformed(evt);
+            }
+        });
 
         btn_delete.setBackground(new java.awt.Color(102, 0, 102));
         btn_delete.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btn_delete.setForeground(new java.awt.Color(204, 153, 255));
         btn_delete.setText("DELETE");
+        btn_delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_deleteActionPerformed(evt);
+            }
+        });
 
         backbtn.setBackground(new java.awt.Color(0, 102, 102));
         backbtn.setForeground(new java.awt.Color(204, 255, 255));
@@ -129,7 +157,7 @@ public class adminAddAdmin extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(204, 204, 204));
         jLabel11.setText("Faculty of Technology - University of Ruhuna");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        ad_tbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -140,7 +168,12 @@ public class adminAddAdmin extends javax.swing.JFrame {
                 "Admin ID", "Admin Name", "Address", "Email", "DOB", "Mobile No", "Gender", "Role"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        ad_tbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ad_tblMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(ad_tbl);
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 255, 204));
@@ -149,6 +182,12 @@ public class adminAddAdmin extends javax.swing.JFrame {
         id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idActionPerformed(evt);
+            }
+        });
+
+        adaddress.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adaddressActionPerformed(evt);
             }
         });
 
@@ -176,9 +215,9 @@ public class adminAddAdmin extends javax.swing.JFrame {
                                     .addComponent(jLabel10))
                                 .addGap(31, 31, 31)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                                     .addComponent(fullname)
-                                    .addComponent(id, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE))
+                                    .addComponent(id, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                                    .addComponent(adaddress))
                                 .addGap(95, 95, 95)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel7)
@@ -188,11 +227,11 @@ public class adminAddAdmin extends javax.swing.JFrame {
                                     .addComponent(jLabel6))
                                 .addGap(47, 47, 47)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(role)
-                                    .addComponent(gender, 0, 140, Short.MAX_VALUE)
-                                    .addComponent(email)
-                                    .addComponent(dob)
-                                    .addComponent(contact))
+                                    .addComponent(arole)
+                                    .addComponent(agender, 0, 140, Short.MAX_VALUE)
+                                    .addComponent(aemail)
+                                    .addComponent(adob)
+                                    .addComponent(acontact))
                                 .addGap(45, 45, 45)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btn_delete)
@@ -209,46 +248,45 @@ public class adminAddAdmin extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(42, 42, 42)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6)
+                    .addComponent(aemail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10)
+                    .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6)
-                            .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10)
-                            .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btn_update, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5)
+                            .addComponent(adob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(17, 17, 17)
+                                .addComponent(btn_delete, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel7)
+                                    .addComponent(acontact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(13, 13, 13)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btn_update, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5)
-                                    .addComponent(dob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(17, 17, 17)
-                                        .addComponent(btn_delete, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jLabel7)
-                                            .addComponent(contact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(13, 13, 13)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(gender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel8))))
-                                .addGap(24, 24, 24)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel9)
-                                    .addComponent(role, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel3)
-                                    .addComponent(fullname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel4))))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(agender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel8))))
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(arole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(fullname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(adaddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -272,9 +310,9 @@ public class adminAddAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
+    private void aemailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aemailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_emailActionPerformed
+    }//GEN-LAST:event_aemailActionPerformed
 
     private void backbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backbtnActionPerformed
         setVisible(false);
@@ -285,6 +323,86 @@ public class adminAddAdmin extends javax.swing.JFrame {
     private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_idActionPerformed
+
+    private void btn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addActionPerformed
+        Admin Ad = new Admin();
+        
+        String ID = id.getText();
+        String name = fullname.getText();
+        String address = adaddress.getText();
+        String email = aemail.getText();
+        String dob = adob.getText();
+        Integer mobile = Integer.parseInt(acontact.getText());
+        String gender = (String) agender.getSelectedItem();
+        String role = arole.getText();
+        
+        Ad.setID(ID);
+        Ad.setName(name);
+        Ad.setAddress(address);
+        Ad.setEmail(email);
+        Ad.setDob(dob);
+        Ad.setMobile(mobile);
+        Ad.setGender(gender);
+        Ad.setRole(role);
+        
+        Ad.insert();
+        displayTable();
+    }//GEN-LAST:event_btn_addActionPerformed
+
+    private void btn_updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updateActionPerformed
+        Admin Ad = new Admin();
+        
+        String ID = id.getText();
+        String name = fullname.getText();
+        String address = adaddress.getText();
+        String email = aemail.getText();
+        String dob = adob.getText();
+        Integer mobile = Integer.parseInt(acontact.getText());
+        String gender = (String) agender.getSelectedItem();
+        String role = arole.getText();
+        
+        Ad.setID(ID);
+        Ad.setName(name);
+        Ad.setAddress(address);
+        Ad.setEmail(email);
+        Ad.setDob(dob);
+        Ad.setMobile(mobile);
+        Ad.setGender(gender);
+        Ad.setRole(role);
+        
+        Ad.update();
+        displayTable();
+    }//GEN-LAST:event_btn_updateActionPerformed
+
+    private void btn_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deleteActionPerformed
+        try {
+            Admin Ad = new Admin();
+            DefaultTableModel d =(DefaultTableModel)ad_tbl.getModel();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_btn_deleteActionPerformed
+
+    private void ad_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ad_tblMouseClicked
+        try {
+            DefaultTableModel d=(DefaultTableModel)ad_tbl.getModel();
+            int Index=ad_tbl.getSelectedRow();
+            
+            id.setText(d.getValueAt(Index, 0).toString());
+            fullname.setText(d.getValueAt(Index, 1).toString());
+            adaddress.setText(d.getValueAt(Index, 2).toString());
+            aemail.setText(d.getValueAt(Index, 3).toString());
+            adob.setText(d.getValueAt(Index, 4).toString());
+            acontact.setText(d.getValueAt(Index, 5).toString());
+            agender.setSelectedItem(d.getValueAt(Index, 6).toString());
+            arole.setText(d.getValueAt(Index, 7).toString());
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_ad_tblMouseClicked
+
+    private void adaddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adaddressActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_adaddressActionPerformed
 
     /**
      * @param args the command line arguments
@@ -322,16 +440,18 @@ public class adminAddAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea address;
+    private javax.swing.JTextField acontact;
+    private javax.swing.JTable ad_tbl;
+    private javax.swing.JTextField adaddress;
+    private javax.swing.JTextField adob;
+    private javax.swing.JTextField aemail;
+    private javax.swing.JComboBox<String> agender;
+    private javax.swing.JTextField arole;
     private javax.swing.JButton backbtn;
     private javax.swing.JButton btn_add;
     private javax.swing.JButton btn_delete;
     private javax.swing.JButton btn_update;
-    private javax.swing.JTextField contact;
-    private javax.swing.JTextField dob;
-    private javax.swing.JTextField email;
     private javax.swing.JTextField fullname;
-    private javax.swing.JComboBox<String> gender;
     private javax.swing.JTextField id;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -344,9 +464,6 @@ public class adminAddAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField role;
     // End of variables declaration//GEN-END:variables
 }

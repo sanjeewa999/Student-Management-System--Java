@@ -206,8 +206,6 @@ public class tecoaddmedical extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 204));
         jLabel2.setText("ADD MEDICAL");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\Java_Project\\Images\\medical.png")); // NOI18N
-
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 255, 204));
         jLabel5.setText("Student Id :");

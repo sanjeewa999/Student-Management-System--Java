@@ -14,13 +14,13 @@ public interface AdminNoticesInterface {
     
     public void update();
     
-    public void delete();
+    public void delete(int id);
     
     public void loadlist();
     
     public void notices();
     
-    public void search(); 
+    //public void search(); 
     
     /*public void save(Lecturer lecturer);
     public void update(Lecturer lecturer);

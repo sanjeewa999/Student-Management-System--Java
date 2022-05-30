@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Component class="javax.swing.JButton" name="backbtn">
       <Properties>
@@ -124,9 +124,9 @@
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="lecid" max="32767" attributes="0"/>
-                      <Component id="depid" max="32767" attributes="0"/>
-                      <Component id="name" alignment="0" pref="150" max="32767" attributes="0"/>
-                      <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
+                      <Component id="ldepid" max="32767" attributes="0"/>
+                      <Component id="lname" alignment="0" pref="150" max="32767" attributes="0"/>
+                      <Component id="laddress" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -141,14 +141,14 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="email" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
-                                  <Component id="dob" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="lemail" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="ldob" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="contact" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="lcontact" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="gender" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
+                          <Component id="lgender" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="position" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
+                      <Component id="lposition" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
@@ -177,14 +177,14 @@
                               <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lecid" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="email" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lemail" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="depid" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="ldepid" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="dob" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="ldob" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -197,9 +197,9 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="name" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lname" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="contact" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lcontact" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -208,23 +208,23 @@
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="gender" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lgender" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btn_delete" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="position" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lposition" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <Component id="laddress" alignment="0" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                   <Component id="jScrollPane3" min="-2" pref="278" max="-2" attributes="0"/>
                   <EmptySpace pref="43" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -374,32 +374,17 @@
         </Component>
         <Component class="javax.swing.JTextField" name="lecid">
         </Component>
-        <Component class="javax.swing.JTextField" name="depid">
+        <Component class="javax.swing.JTextField" name="ldepid">
         </Component>
-        <Component class="javax.swing.JTextField" name="name">
+        <Component class="javax.swing.JTextField" name="lname">
         </Component>
-        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-          <AuxValues>
-            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-          </AuxValues>
-
-          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-          <SubComponents>
-            <Component class="javax.swing.JTextArea" name="jTextArea1">
-              <Properties>
-                <Property name="columns" type="int" value="20"/>
-                <Property name="rows" type="int" value="5"/>
-              </Properties>
-            </Component>
-          </SubComponents>
-        </Container>
-        <Component class="javax.swing.JTextField" name="email">
+        <Component class="javax.swing.JTextField" name="lemail">
         </Component>
-        <Component class="javax.swing.JTextField" name="dob">
+        <Component class="javax.swing.JTextField" name="ldob">
         </Component>
-        <Component class="javax.swing.JTextField" name="contact">
+        <Component class="javax.swing.JTextField" name="lcontact">
         </Component>
-        <Component class="javax.swing.JComboBox" name="gender">
+        <Component class="javax.swing.JComboBox" name="lgender">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="2">
@@ -412,7 +397,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="position">
+        <Component class="javax.swing.JTextField" name="lposition">
         </Component>
         <Component class="javax.swing.JButton" name="btn_add">
           <Properties>
@@ -427,6 +412,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="ADD"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_addActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_update">
           <Properties>
@@ -441,6 +429,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="UPDATE"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_updateActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btn_delete">
           <Properties>
@@ -455,6 +446,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="DELETE"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_deleteActionPerformed"/>
+          </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane3">
           <AuxValues>
@@ -463,7 +457,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jTable2">
+            <Component class="javax.swing.JTable" name="lec_tbl">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="9" rowCount="4">
@@ -531,9 +525,14 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lec_tblMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JTextField" name="laddress">
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>

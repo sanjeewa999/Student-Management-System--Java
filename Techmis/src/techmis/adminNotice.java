@@ -5,6 +5,8 @@
 package techmis;
 
 import java.awt.Dimension;
+import java.util.Vector;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -20,7 +22,24 @@ public class adminNotice extends javax.swing.JFrame {
     public adminNotice() {
         initComponents();
         //initialize components same fuction as initComponents
+        
+        displayTable();
     }
+    
+    public void displayTable(){
+        AdminNotices Adnot=new AdminNotices();
+        
+        DefaultTableModel model=(DefaultTableModel)Table_list.getModel();
+        
+        model.setRowCount(0);
+        Adnot.loadlist();
+        
+        for (Object data : Adnot.getData()) {
+            model.addRow((Vector<?>) data);
+        }
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -52,7 +71,6 @@ public class adminNotice extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         Table_list = new javax.swing.JTable();
-        btn_search = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -112,11 +130,21 @@ public class adminNotice extends javax.swing.JFrame {
         btn_update.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_update.setForeground(new java.awt.Color(153, 51, 0));
         btn_update.setText("UPDATE");
+        btn_update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_updateActionPerformed(evt);
+            }
+        });
 
         btn_delete.setBackground(new java.awt.Color(153, 153, 255));
         btn_delete.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btn_delete.setForeground(new java.awt.Color(153, 51, 0));
         btn_delete.setText("DELETE");
+        btn_delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_deleteActionPerformed(evt);
+            }
+        });
 
         backbtn.setBackground(new java.awt.Color(0, 102, 102));
         backbtn.setForeground(new java.awt.Color(204, 255, 255));
@@ -141,12 +169,12 @@ public class adminNotice extends javax.swing.JFrame {
                 "Notice ID", "Date", "Title", "Notice"
             }
         ));
+        Table_list.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Table_listMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(Table_list);
-
-        btn_search.setBackground(new java.awt.Color(153, 153, 255));
-        btn_search.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btn_search.setForeground(new java.awt.Color(153, 51, 0));
-        btn_search.setText("SEARCH");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -168,35 +196,27 @@ public class adminNotice extends javax.swing.JFrame {
                                     .addComponent(noticeLabel3))))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(47, 47, 47)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                                        .addComponent(btn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(noticeid, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(noticedate, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(noticetitle, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(0, 0, Short.MAX_VALUE)))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(btn_update, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(btn_delete, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(btn_search, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(106, 106, 106)
-                                .addComponent(jLabel11))))
+                                .addComponent(jLabel11))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(47, 47, 47)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(noticeid)
+                                    .addComponent(noticedate, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(noticetitle)
+                                    .addComponent(jScrollPane1))
+                                .addGap(114, 114, 114)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(btn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn_update, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btn_delete, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(98, 98, 98)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(276, 276, 276)
                         .addComponent(jLabel1)))
-                .addContainerGap())
+                .addContainerGap(102, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,30 +227,32 @@ public class adminNotice extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(noticeidLabel)
                     .addComponent(noticeid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(dateLabel1)
-                    .addComponent(noticedate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_search))
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(titleLabel2)
-                            .addComponent(noticetitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(27, 27, 27)
-                                .addComponent(noticeLabel3))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
+                        .addGap(15, 15, 15)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn_delete)
-                            .addComponent(btn_update)
-                            .addComponent(btn_add))))
+                            .addComponent(dateLabel1)
+                            .addComponent(noticedate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_add)
+                        .addGap(11, 11, 11)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(titleLabel2)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(noticetitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_update)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(noticeLabel3))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(btn_delete)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
@@ -261,8 +283,69 @@ public class adminNotice extends javax.swing.JFrame {
     }//GEN-LAST:event_backbtnActionPerformed
 
     private void btn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addActionPerformed
-        // TODO add your handling code here:
+        AdminNotices Adnot=new AdminNotices();
+        
+        String date = noticedate.getText();
+        String title = noticetitle.getText();
+        String notice = this.notice.getText();
+        
+        Adnot.setDate(date);
+        Adnot.setTitle(title);
+        Adnot.setNotice(notice);
+        
+        Adnot.insert();
+        displayTable();
     }//GEN-LAST:event_btn_addActionPerformed
+
+    private void btn_updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updateActionPerformed
+         AdminNotices Adnot=new AdminNotices();
+         
+         
+        String date = noticedate.getText();
+        String title = noticetitle.getText();
+        String notice = this.notice.getText();
+        Integer id=Integer.parseInt(noticeid.getText());
+        
+        Adnot.setDate(date);
+        Adnot.setTitle(title);
+        Adnot.setNotice(notice);
+        Adnot.setID(id);
+        
+        Adnot.update();
+        displayTable();
+    }//GEN-LAST:event_btn_updateActionPerformed
+
+    private void btn_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deleteActionPerformed
+        
+        try {
+            AdminNotices Adnot=new AdminNotices();
+        DefaultTableModel d =(DefaultTableModel)Table_list.getModel();
+        int row = Table_list.getSelectedRow();
+        int id = (int) Table_list.getValueAt(row, 0);
+        
+        int count=Table_list.getRowCount();
+        
+        Adnot.delete(id);
+        displayTable();
+        //clear();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_btn_deleteActionPerformed
+
+    private void Table_listMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Table_listMouseClicked
+        try {
+               DefaultTableModel d=(DefaultTableModel)Table_list.getModel();
+               int Index=Table_list.getSelectedRow();
+               
+               noticeid.setText(d.getValueAt(Index, 0).toString());
+               noticedate.setText(d.getValueAt(Index, 1).toString());
+               noticetitle.setText(d.getValueAt(Index, 2).toString());
+               notice.setText(d.getValueAt(Index, 3).toString());
+               
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_Table_listMouseClicked
 
     /**
      * @param args the command line arguments
@@ -304,7 +387,6 @@ public class adminNotice extends javax.swing.JFrame {
     private javax.swing.JButton backbtn;
     private javax.swing.JButton btn_add;
     private javax.swing.JButton btn_delete;
-    private javax.swing.JButton btn_search;
     private javax.swing.JButton btn_update;
     private javax.swing.JLabel dateLabel1;
     private javax.swing.JLabel jLabel1;
@@ -324,7 +406,7 @@ public class adminNotice extends javax.swing.JFrame {
     private javax.swing.JLabel titleLabel2;
     // End of variables declaration//GEN-END:variables
 
-
+/*
 //Initialize and declare components
     private void init(){ //start
         centerFrame();
@@ -393,5 +475,6 @@ public class adminNotice extends javax.swing.JFrame {
     }//end
          
          
-         
+ */
+    
 }//end class

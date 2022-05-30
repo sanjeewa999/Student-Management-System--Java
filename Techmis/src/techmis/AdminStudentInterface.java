@@ -14,6 +14,10 @@ public interface AdminStudentInterface {
     
     public void update();
     
-    public void delete();
+    public void delete(String ID);
+    
+    public void loadlist();
+    
+    public void notices();
     
 }

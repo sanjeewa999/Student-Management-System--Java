@@ -43,8 +43,6 @@ public class tecoviewattendence extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\Java_Project\\Images\\studentAttendance.png")); // NOI18N
-
         jLabel2.setBackground(new java.awt.Color(204, 0, 51));
         jLabel2.setFont(new java.awt.Font("Rockwell", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 204));
@@ -56,7 +54,11 @@ public class tecoviewattendence extends javax.swing.JFrame {
 
         jTextField3.setBackground(new java.awt.Color(0, 102, 102));
         jTextField3.setForeground(new java.awt.Color(255, 255, 204));
-        jTextField3.setText("jTextField1");
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(204, 255, 204));
@@ -64,7 +66,6 @@ public class tecoviewattendence extends javax.swing.JFrame {
 
         jTextField4.setBackground(new java.awt.Color(0, 102, 102));
         jTextField4.setForeground(new java.awt.Color(255, 255, 204));
-        jTextField4.setText("jTextField1");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -182,6 +183,10 @@ public class tecoviewattendence extends javax.swing.JFrame {
         adminDashboard object = new adminDashboard();
         object.setVisible(true);
     }//GEN-LAST:event_btn_backActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -14,6 +14,10 @@ public interface AdminCoursesInterface {
     
     public void update();
     
-    public void delete();
+    public void delete(String id);
+    
+    public void loadlist();
+    
+    public void notices();
     
 }

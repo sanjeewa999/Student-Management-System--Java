@@ -1,6 +1,8 @@
 package techmis;
 
 
+
+
 public class CAmarks {
     private String course_id;
     private String stu_id;

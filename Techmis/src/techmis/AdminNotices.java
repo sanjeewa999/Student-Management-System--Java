@@ -20,7 +20,15 @@ public class AdminNotices extends DBConnection implements AdminNoticesInterface{
     private String date;
     private String title;
     private String notice;
-    
+    private Vector data;
+
+    public Vector getData() {
+        return data;
+    }
+
+    public void setData(Vector data) {
+        this.data = data;
+    }
 
     public Integer getID() {    
         return ID;
@@ -69,13 +77,12 @@ public class AdminNotices extends DBConnection implements AdminNoticesInterface{
     public void insert() { //start
       //call connection
         super.connection();
-        String sql = "insert into notice(ID, date, title, notice) values (?,?,?,?)";
+        String sql = "insert into notice(date, title, notice) values (?,?,?)";
         try {
             PreparedStatement pst = conn.prepareStatement(sql);
-            pst.setInt(1, ID);
-            pst.setString(2, date);
-            pst.setString(3, title);
-            pst.setString(4, notice);
+            pst.setString(1, date);
+            pst.setString(2, title);
+            pst.setString(3, notice);
             pst.executeUpdate();
             pst.close();
             message("Successfully added");
@@ -88,7 +95,7 @@ public class AdminNotices extends DBConnection implements AdminNoticesInterface{
     public void update() {
         //call connection
         super.connection();
-        String sql = "update notice set (date=?, title=?, notice=? " + "where notice_id=?";
+        String sql = "update notice set date=?, title=?, notice=? where notice_id=?";
         try {
             PreparedStatement pst = conn.prepareStatement(sql);
             pst.setString(1, date);
@@ -104,14 +111,14 @@ public class AdminNotices extends DBConnection implements AdminNoticesInterface{
     }
 
     @Override
-    public void delete() {
+    public void delete(int id) {
         //call connection
         super.connection();
         String sql = "delete from notice where notice_id = ?";
         try {
             PreparedStatement pst = conn.prepareStatement(sql);
             
-            pst.setInt(1, ID);
+            pst.setInt(1, id);
             pst.executeUpdate();
             pst.close();
             message("Successfully deleted");
@@ -134,13 +141,13 @@ public class AdminNotices extends DBConnection implements AdminNoticesInterface{
             while(rs.next()){ //start while
                 rowCounter++;
                 //byte_notice_id = rs.getByte("");
-                Integer ID; = rs.getInt("ID");
-                String date; = rs.getString("date");
-                String title; = rs.getString("title");
-                String notice; = re.getString("notice");
+                Integer ID = rs.getInt("notice_id");
+                String date = rs.getString("date");
+                String title = rs.getString("title");
+                String notice = rs.getString("notice");
                 
                 Vector row = new Vector();
-                row.add(" "+rowCounter+".");
+                
                 row.add(ID);
                 row.add(date);
                 row.add(title);
@@ -168,13 +175,13 @@ public class AdminNotices extends DBConnection implements AdminNoticesInterface{
             if(rs.next()){ //start while
                 rowCounter++;
                 //byte_notice_id = rs.getByte("");
-                Integer ID; = rs.getInt("ID");
-                String date; = rs.getString("date");
-                String title; = rs.getString("title");
-                String notice; = rs.getString("notice");
+                Integer ID = rs.getInt("ID");
+                String date = rs.getString("date");
+                String title = rs.getString("title");
+                String notice = rs.getString("notice");
                 
               //set the values
-              this.setId(ID);
+                setID(ID);
               this.setDate(date);
               this.setTitle(title);
               this.setNotice(notice);
@@ -188,7 +195,7 @@ public class AdminNotices extends DBConnection implements AdminNoticesInterface{
         }
     }
 
-    @Override
+   /* @Override
     public void search() {
         this.setData(new Vector());
         super.connection();
@@ -223,7 +230,7 @@ public class AdminNotices extends DBConnection implements AdminNoticesInterface{
         }
     }
     
-    
+    */
 
     //prompt message
     private void message(String message){ //start

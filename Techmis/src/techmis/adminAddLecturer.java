@@ -4,6 +4,10 @@
  */
 package techmis;
 
+import java.util.Vector;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author ASUS
@@ -15,7 +19,21 @@ public class adminAddLecturer extends javax.swing.JFrame {
      */
     public adminAddLecturer() {
         initComponents();
+        displayTable();
     }
+    
+     public void displayTable(){
+        AdminLecturer lec = new AdminLecturer();
+         
+        DefaultTableModel model=(DefaultTableModel)lec_tbl.getModel();
+        
+        model.setRowCount(0);
+        lec.loadlist();
+        
+        for (Object data : lec.getData()){
+            model.addRow((Vector<?>) data);
+        }
+     }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -44,20 +62,19 @@ public class adminAddLecturer extends javax.swing.JFrame {
         backbtn1 = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
         lecid = new javax.swing.JTextField();
-        depid = new javax.swing.JTextField();
-        name = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        email = new javax.swing.JTextField();
-        dob = new javax.swing.JTextField();
-        contact = new javax.swing.JTextField();
-        gender = new javax.swing.JComboBox<>();
-        position = new javax.swing.JTextField();
+        ldepid = new javax.swing.JTextField();
+        lname = new javax.swing.JTextField();
+        lemail = new javax.swing.JTextField();
+        ldob = new javax.swing.JTextField();
+        lcontact = new javax.swing.JTextField();
+        lgender = new javax.swing.JComboBox<>();
+        lposition = new javax.swing.JTextField();
         btn_add = new javax.swing.JButton();
         btn_update = new javax.swing.JButton();
         btn_delete = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        lec_tbl = new javax.swing.JTable();
+        laddress = new javax.swing.JTextField();
 
         backbtn.setBackground(new java.awt.Color(0, 102, 102));
         backbtn.setForeground(new java.awt.Color(204, 255, 255));
@@ -140,28 +157,39 @@ public class adminAddLecturer extends javax.swing.JFrame {
         jLabel18.setForeground(new java.awt.Color(204, 204, 204));
         jLabel18.setText("Faculty of Technology - University of Ruhuna");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
+        lgender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
 
         btn_add.setBackground(new java.awt.Color(102, 0, 102));
         btn_add.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btn_add.setForeground(new java.awt.Color(204, 153, 255));
         btn_add.setText("ADD");
+        btn_add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_addActionPerformed(evt);
+            }
+        });
 
         btn_update.setBackground(new java.awt.Color(102, 0, 102));
         btn_update.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btn_update.setForeground(new java.awt.Color(204, 153, 255));
         btn_update.setText("UPDATE");
+        btn_update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_updateActionPerformed(evt);
+            }
+        });
 
         btn_delete.setBackground(new java.awt.Color(102, 0, 102));
         btn_delete.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         btn_delete.setForeground(new java.awt.Color(204, 153, 255));
         btn_delete.setText("DELETE");
+        btn_delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_deleteActionPerformed(evt);
+            }
+        });
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        lec_tbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null},
@@ -172,7 +200,12 @@ public class adminAddLecturer extends javax.swing.JFrame {
                 "Lecture ID", "Lec dep ID", "Name", "Address", "Email", "DOB", "Contact No", "Gender", "Position"
             }
         ));
-        jScrollPane3.setViewportView(jTable2);
+        lec_tbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lec_tblMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(lec_tbl);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -199,9 +232,9 @@ public class adminAddLecturer extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lecid)
-                    .addComponent(depid)
-                    .addComponent(name, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(ldepid)
+                    .addComponent(lname, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                    .addComponent(laddress))
                 .addGap(67, 67, 67)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel15)
@@ -214,11 +247,11 @@ public class adminAddLecturer extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(email, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(dob, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(contact, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(gender, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(position, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(lemail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ldob, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lcontact, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lgender, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lposition, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(56, 56, 56)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -242,13 +275,13 @@ public class adminAddLecturer extends javax.swing.JFrame {
                             .addComponent(jLabel10)
                             .addComponent(lecid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel15)
-                            .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lemail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(depid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ldepid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel16)
-                            .addComponent(dob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(ldob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(43, 43, 43)
                         .addComponent(btn_add, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -257,26 +290,26 @@ public class adminAddLecturer extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel13)
-                            .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel17)
-                            .addComponent(contact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(lcontact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(9, 9, 9)
                         .addComponent(btn_update, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel14)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
-                            .addComponent(gender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lgender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btn_delete, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel12)
-                            .addComponent(position, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
+                            .addComponent(lposition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(laddress))
+                .addGap(41, 41, 41)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -313,6 +346,95 @@ public class adminAddLecturer extends javax.swing.JFrame {
         object.setVisible(true);
     }//GEN-LAST:event_backbtn1ActionPerformed
 
+    private void btn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addActionPerformed
+        AdminLecturer lec = new AdminLecturer();
+        
+        String ID = lecid.getText();
+        String dep_id = ldepid.getText();
+        String name = lname.getText();
+        String address = laddress.getText();
+        String email = lemail.getText();
+        String dob = ldob.getText();
+        Integer mobile = Integer.parseInt(lcontact.getText());
+        String gender = (String) lgender.getSelectedItem(); 
+        String position = lposition.getText();
+        
+        lec.setID(ID);
+        lec.setDepId(dep_id);
+        lec.setName(name);
+        lec.setAddress(address);
+        lec.setEmail(email);
+        lec.setDob(dob);
+        lec.setMobile(mobile);
+        lec.setGender(gender);
+        lec.setPosition(position);
+        
+        lec.insert();
+        displayTable();
+    }//GEN-LAST:event_btn_addActionPerformed
+
+    private void btn_updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_updateActionPerformed
+        AdminLecturer lec = new AdminLecturer();
+        
+        String ID = lecid.getText();
+        String dep_id = ldepid.getText();
+        String name = lname.getText();
+        String address = laddress.getText();
+        String email = lemail.getText();
+        String dob = ldob.getText();
+        Integer mobile = Integer.parseInt(lcontact.getText());
+        String gender = (String) lgender.getSelectedItem(); 
+        String position = lposition.getText();
+        
+        lec.setID(ID);
+        lec.setDepId(dep_id);
+        lec.setName(name);
+        lec.setAddress(address);
+        lec.setEmail(email);
+        lec.setDob(dob);
+        lec.setMobile(mobile);
+        lec.setGender(gender);
+        lec.setPosition(position);
+        
+        lec.update();
+        displayTable();
+    }//GEN-LAST:event_btn_updateActionPerformed
+
+    private void btn_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deleteActionPerformed
+        try {
+            AdminLecturer lec = new AdminLecturer();
+            DefaultTableModel d =(DefaultTableModel)lec_tbl.getModel();
+            int row = lec_tbl.getSelectedRow();
+            String id =(String) lec_tbl.getValueAt(row, 0);
+            
+            int count=lec_tbl.getRowCount();
+            
+            lec.delete(id);
+            displayTable();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_btn_deleteActionPerformed
+
+    private void lec_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lec_tblMouseClicked
+        try {
+            DefaultTableModel d=(DefaultTableModel)lec_tbl.getModel();
+            int Index=lec_tbl.getSelectedRow();
+            
+            lecid.setText(d.getValueAt(Index, 0).toString());
+            ldepid.setText(d.getValueAt(Index, 1).toString());
+            lname.setText(d.getValueAt(Index, 2).toString());
+            laddress.setText(d.getValueAt(Index, 3).toString());
+            lemail.setText(d.getValueAt(Index, 4).toString());
+            ldob.setText(d.getValueAt(Index, 5).toString());
+            lcontact.setText(d.getValueAt(Index, 6).toString());
+            lgender.setSelectedItem(d.getValueAt(Index, 7).toString());
+            lposition.setText(d.getValueAt(Index, 8).toString());
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_lec_tblMouseClicked
+   
+    
     /**
      * @param args the command line arguments
      */
@@ -354,11 +476,6 @@ public class adminAddLecturer extends javax.swing.JFrame {
     private javax.swing.JButton btn_add;
     private javax.swing.JButton btn_delete;
     private javax.swing.JButton btn_update;
-    private javax.swing.JTextField contact;
-    private javax.swing.JTextField depid;
-    private javax.swing.JTextField dob;
-    private javax.swing.JTextField email;
-    private javax.swing.JComboBox<String> gender;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -372,14 +489,18 @@ public class adminAddLecturer extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField laddress;
+    private javax.swing.JTextField lcontact;
+    private javax.swing.JTextField ldepid;
+    private javax.swing.JTextField ldob;
+    private javax.swing.JTable lec_tbl;
     private javax.swing.JTextField lecid;
-    private javax.swing.JTextField name;
-    private javax.swing.JTextField position;
+    private javax.swing.JTextField lemail;
+    private javax.swing.JComboBox<String> lgender;
+    private javax.swing.JTextField lname;
+    private javax.swing.JTextField lposition;
     // End of variables declaration//GEN-END:variables
 }
