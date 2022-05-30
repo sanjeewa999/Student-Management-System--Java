@@ -17,6 +17,17 @@ public class tecodashboard extends javax.swing.JFrame {
         initComponents();
     }
 
+    public static String ID;
+
+    public static String getID() {
+        return ID;
+    }
+
+    public static void setID(String ID) {
+        tecodashboard.ID = ID;
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

@@ -142,7 +142,7 @@ public class adminDashboard extends javax.swing.JFrame {
 
         backbtn2.setBackground(new java.awt.Color(0, 102, 102));
         backbtn2.setForeground(new java.awt.Color(204, 255, 255));
-        backbtn2.setText("<-- Back ");
+        backbtn2.setText("<-- Log out");
         backbtn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backbtn2ActionPerformed(evt);
