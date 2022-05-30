@@ -3,10 +3,7 @@ package techmis;
 
 
 
-
-
 import java.util.List;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -454,7 +451,6 @@ public class CAmarksForm extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         
-         
         CAmarks ca = new CAmarks();
         ca.setCourse_id(search);
         CAmarksDAOimp dao = new CAmarksDAOimp();
@@ -472,6 +468,7 @@ public class CAmarksForm extends javax.swing.JFrame {
         txtmid.setText("");
         txtsid.requestFocus();
         
+        
     }//GEN-LAST:event_jButton3ActionPerformed
     String search;
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -479,8 +476,6 @@ public class CAmarksForm extends javax.swing.JFrame {
        
             CAmarksDAOimp dao = new CAmarksDAOimp();
             CAmarks ca  = dao.get(search);
-            
-            
        
             txtsid.setText(ca.getStu_id());
             txtcid.setText(ca. getCourse_id());
@@ -491,7 +486,7 @@ public class CAmarksForm extends javax.swing.JFrame {
             txtass1.setText(String.valueOf(ca.getAss1()));
             txtass2.setText(String.valueOf(ca.getAss2()));
             txtass3.setText(String.valueOf(ca.getAss3()));
-            txtmid.setText(String.valueOf(ca.getMid()));
+            txtass3.setText(String.valueOf(ca.getMid()));
        
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -545,7 +540,7 @@ public class CAmarksForm extends javax.swing.JFrame {
      
         CAmarks ca = new  CAmarks();
         
-       float ca_mark,max_quiz1 = 0,max_quiz2=(float) 0.00,max_ass1=(float) 0.00,max_ass2=(float) 0.00,max_ass3;
+       float ca_mark,max_quiz1,max_quiz2=(float) 0.00,max_ass1=(float) 0.00,max_ass2=(float) 0.00,max_ass3;
      
         Float quiz1 = Float.parseFloat(txtq1 .getText());
         Float quiz2 = Float.parseFloat(txtq2 .getText());
@@ -630,16 +625,11 @@ public class CAmarksForm extends javax.swing.JFrame {
             max_quiz1=quiz2;
         }
         
-        ca_mark=(float) (((max_quiz1 + max_quiz2) *0.2 )+(( max_ass1 + max_ass2 )*0.2) + (mid*0.2));
+        ca_mark=(float) (((max_quiz2 + max_quiz2) *0.2 )+(( max_ass1 + max_ass2 )*0.2) + (mid*0.2));
         
         
-       
-        
-        JFrame f = new JFrame();  
-        JOptionPane.showMessageDialog(f,"CA Mark is: "+ca_mark); 
-        
-       
-       
+        System.out.println(ca_mark);
+       //JOptionPane.showMessageDialog(ca_mark);
       
         
 // TODO add your handling code here:
@@ -670,10 +660,6 @@ public class CAmarksForm extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(CAmarksForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
