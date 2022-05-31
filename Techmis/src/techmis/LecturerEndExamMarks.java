@@ -1,5 +1,7 @@
 package techmis;
 
+
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -442,7 +444,7 @@ public class LecturerEndExamMarks extends javax.swing.JFrame {
 
     private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
         setVisible(false);
-        tecodashboard object = new tecodashboard();
+        LecturerDashboard object = new LecturerDashboard();
         object.setVisible(true);
     }//GEN-LAST:event_btn_backActionPerformed
 
@@ -570,6 +572,10 @@ public class LecturerEndExamMarks extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(LecturerEndExamMarks.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>

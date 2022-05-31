@@ -275,8 +275,8 @@ public class Lecturer_attendence extends javax.swing.JFrame {
 
     private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
         setVisible(false);
-        // tecodashboard object = new tecodashboard();
-        //   object.setVisible(true);
+        LecturerDashboard object = new LecturerDashboard();
+        object.setVisible(true);
     }//GEN-LAST:event_btn_backActionPerformed
 
     /**
