@@ -79,7 +79,7 @@ public class studentDashboard extends javax.swing.JFrame {
         jButton5.setBackground(new java.awt.Color(255, 0, 0));
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 0));
-        jButton5.setText("Grade");
+        jButton5.setText("Notices");
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton5MouseClicked(evt);
@@ -340,7 +340,9 @@ public class studentDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_backbtn2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        setVisible(false);
+        studentNotice_1 object = new studentNotice_1();
+        object.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**

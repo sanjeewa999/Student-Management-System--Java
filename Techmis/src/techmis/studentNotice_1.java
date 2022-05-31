@@ -204,8 +204,9 @@ public class studentNotice_1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
-        // TODO add your handling code here:
+        setVisible(false);
+        studentDashboard object = new studentDashboard();
+        object.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
    
    
@@ -258,7 +259,7 @@ public class studentNotice_1 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new studentNotice().setVisible(true);
+                new studentNotice_1().setVisible(true);
             }
         });
     }
