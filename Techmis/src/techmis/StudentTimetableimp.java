@@ -36,8 +36,8 @@ public class StudentTimetableimp implements Student_timetable {
                 st.setSemester(rs.getString("semester"));
                 st.setDate(rs.getString("date"));
                 st.setCourse_name(rs.getString("course_name"));
-                st.setStart_time(rs.getString("start time"));
-                st.setEnd_time(rs.getString("end time"));
+                st.setStart_time(rs.getString("start_time"));
+                st.setEnd_time(rs.getString("end_time"));
                 st.setLocation(rs.getString("location"));
                 st.setType(rs.getString("type"));
                 
