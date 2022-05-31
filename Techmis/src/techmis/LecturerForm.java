@@ -372,6 +372,7 @@ public class LecturerForm extends javax.swing.JFrame {
         DFT.setRowCount(0);
         for( Lecturer lec: list)
         {
+            String lecinfo;
             String lec_id=lec.getLec_id();
             String lec_dept_id=lec.getLec_dept_id();
             String lec_name=lec.getLec_name();
