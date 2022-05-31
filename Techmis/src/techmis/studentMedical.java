@@ -123,7 +123,9 @@ public class studentMedical extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
+        setVisible(false);
+        studentDashboard object = new studentDashboard();
+        object.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
      public void Load()
     {

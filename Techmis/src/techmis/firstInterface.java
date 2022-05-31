@@ -133,12 +133,13 @@ public class firstInterface extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_enterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_enterActionPerformed
-        /*setVisible(false);
-        mainLogin object = new mainLogin();
-        object.setVisible(true);*/
+        setVisible(false);
+        login object = new login();
+        object.setVisible(true);
     }//GEN-LAST:event_btn_enterActionPerformed
 
     /**
