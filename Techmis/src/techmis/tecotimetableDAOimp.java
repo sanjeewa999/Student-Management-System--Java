@@ -34,7 +34,7 @@ public class tecotimetableDAOimp {
                  tt.setTimetableid(rs.getInt("time_table_id"));
                 tt.setTimetabledepid(rs.getString("dep_id"));
                
-                tt.setTimetablelevel(rs.getInt("level"));
+                tt.setTimetablelevel(rs.getString("level"));
                 tt.setTimetablesemester(rs.getString("semester"));
                 tt.setTimetabledate(rs.getString("date"));
                 tt.setTimetablecoursename(rs.getString("course_name"));

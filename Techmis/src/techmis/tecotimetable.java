@@ -122,7 +122,7 @@ public void Load()
         {
             int t_id=tt.getTimetableid();
             String t_dep_id = tt.getTimetabledepid();
-            int t_level=tt.getTimetablelevel();
+            String t_level=tt.getTimetablelevel();
             String t_semester=tt.getTimetablesemester();
             String t_date=tt.getTimetabledate();
             String t_coursename=tt.getTimetablecoursename();

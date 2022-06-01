@@ -13,7 +13,7 @@ package techmis;
 public class StudentTimetables {
     private int time_table_id;
     private String dep_id;
-    private int level;
+    private String level;
     private String semester;
     private String date;
     private String course_name;
@@ -38,11 +38,11 @@ public class StudentTimetables {
         this.dep_id = dep_id;
     }
 
-    public int getLevel() {
+    public String getLevel() {
         return level;
     }
 
-    public void setLevel(int level) {
+    public void setLevel(String level) {
         this.level = level;
     }
 

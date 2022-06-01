@@ -12,7 +12,7 @@ public class tecoTimetableview {
     
     private int t_id;
     private String t_dep_id;
-    private int t_level;
+    private String t_level;
     private String t_semester;
     private String t_date;
     private String t_coursename;
@@ -37,11 +37,11 @@ public class tecoTimetableview {
         this.t_dep_id = t_dep_id;
     }
 
-    public int getTimetablelevel() {
+    public String getTimetablelevel() {
         return t_level;
     }
 
-    public void setTimetablelevel(int t_level) {
+    public void setTimetablelevel(String t_level) {
         this.t_level = t_level;
     }
 

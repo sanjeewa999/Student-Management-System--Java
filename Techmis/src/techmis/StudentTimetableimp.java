@@ -32,7 +32,7 @@ public class StudentTimetableimp implements Student_timetable {
                 StudentTimetables st = new StudentTimetables();
                 st.setTime_table_id(rs.getInt("time_table_id"));
                 st.setDep_id(rs.getString("dep_id"));
-                st.setLevel(rs.getInt("level"));
+                st.setLevel(rs.getString("level"));
                 st.setSemester(rs.getString("semester"));
                 st.setDate(rs.getString("date"));
                 st.setCourse_name(rs.getString("course_name"));

@@ -5,8 +5,15 @@
         <group>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/login.java</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/adminAddAdmin.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/studentDashboard.java</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/AdminInterface.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/studentupdate.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/StudentviewCA.java</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/Admin.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/studentMedical.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/student_course_details.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/studentNotice_1.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/studentTimetable.java</file>
         </group>
     </open-files>
 </project-private>

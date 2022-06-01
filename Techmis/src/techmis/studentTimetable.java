@@ -119,6 +119,7 @@ public class studentTimetable extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -137,7 +138,7 @@ public class studentTimetable extends javax.swing.JFrame {
         {
             Integer time_table_id=st.getTime_table_id();
             String dep_id=st.getDep_id();
-            Integer level=st.getLevel();
+            String level=st.getLevel();
             String semester=st.getSemester();
             String date=st.getDate();
             String course_name=st.getCourse_name();
