@@ -149,8 +149,9 @@ public class student_course_details extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
-        // TODO add your handling code here:
+        setVisible(false);
+        studentDashboard object = new studentDashboard();
+        object.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
      public void Load()
