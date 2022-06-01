@@ -211,11 +211,21 @@ public class CAmarksForm extends javax.swing.JFrame {
         jLabel10.setText("Assignment 03");
 
         txtass3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        txtass3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtass3ActionPerformed(evt);
+            }
+        });
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel11.setText("Mid");
 
         txtmid.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        txtmid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtmidActionPerformed(evt);
+            }
+        });
 
         jButton5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton5.setText("Calculate CA");
@@ -500,7 +510,7 @@ public class CAmarksForm extends javax.swing.JFrame {
             txtass1.setText(String.valueOf(ca.getAss1()));
             txtass2.setText(String.valueOf(ca.getAss2()));
             txtass3.setText(String.valueOf(ca.getAss3()));
-            txtass3.setText(String.valueOf(ca.getMid()));
+            txtmid.setText(String.valueOf(ca.getMid()));
        
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -642,8 +652,8 @@ public class CAmarksForm extends javax.swing.JFrame {
         ca_mark=(float) (((max_quiz2 + max_quiz2) *0.2 )+(( max_ass1 + max_ass2 )*0.2) + (mid*0.2));
         
         
-        System.out.println(ca_mark);
-       //JOptionPane.showMessageDialog(ca_mark);
+        //System.out.println(ca_mark);
+       JOptionPane.showMessageDialog(null, ca_mark);
       
         
 // TODO add your handling code here:
@@ -654,6 +664,14 @@ public class CAmarksForm extends javax.swing.JFrame {
         LecturerDashboard object = new LecturerDashboard();
         object.setVisible(true);
     }//GEN-LAST:event_btn_backActionPerformed
+
+    private void txtmidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtmidActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtmidActionPerformed
+
+    private void txtass3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtass3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtass3ActionPerformed
 
     /**
      * @param args the command line arguments
