@@ -3,17 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/login.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/adminAddAdmin.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/studentDashboard.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/AdminInterface.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/studentupdate.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/StudentviewCA.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/Admin.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/tecodashboard.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/CAmarksForm.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/studentMedicalinterface.java</file>
             <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/studentMedical.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/student_course_details.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/studentNotice_1.java</file>
-            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/studentTimetable.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/AdminNoticesInterface.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/tecoaddattendence.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/AdminNotices.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/StudentAttendanceimp.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/studentNoticedetails.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/adminNotice.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/firstInterface.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/StudentAttendanceDetails.java</file>
+            <file>file:/C:/Users/ASUS/Documents/NetBeansProjects/Java_Project/Techmis/src/techmis/studentNoticedetails_1.java</file>
         </group>
     </open-files>
 </project-private>
